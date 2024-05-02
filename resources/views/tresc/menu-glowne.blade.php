@@ -29,6 +29,8 @@
             </a>
 
 
+
+
             <a href="{{route('zdjeciaListaDodane')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Zdjęcia
                 <span class="badge bg-warning text-white">{{\App\Models\Zdjecia::all()->count()}}</span></a>
             <a href="{{route('plikiLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Pliki
