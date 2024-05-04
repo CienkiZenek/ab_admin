@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cytat', function (Blueprint $table) {
             $table->id();
             $table->text('tresc');
-            $table->text('podpis');
+            $table->text('podpis')->nullable();;
             $table->string('gatunek')->default('cytat');//gatunek/rodaj tresci - artykuł, wiadomośąc, zasoby, film, modlitwa itp.
             $table->timestamps();
         });

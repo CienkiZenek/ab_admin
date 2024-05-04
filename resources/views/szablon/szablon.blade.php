@@ -61,11 +61,18 @@
         @yield('tresc')
     </div>
 
+
+
+</div>
+<div class="container">
+<div class="tlo-szare1 text-center row mt-5">
+    <div class="col-2 fs-6 fw-lighter">Wersja: {{ config('AdminBobola.wersja') }}</div>
+    <div class="col-8 text-center ">&reg; RedakcjaAndrzejBobola.info 2024 </div>
+    <div class="col-2"></div>
+</div>
 </div>
 
-
-
-<footer class="bg-secondary row text-white mt-auto py-2">
+{{--<footer class="bg-secondary row text-white mt-auto py-2">
 
 
     <div class="col-2 fs-6 fw-lighter">Wersja: {{ config('AdminBobola.wersja') }}</div>
@@ -73,7 +80,7 @@
     <div class="col-2"></div>
 
 
-</footer>
+</footer>--}}
 
 <button onclick="bottomFunction()" id="btnDol" title="Do dołu">Do dołu</button>
 <button onclick="topFunction()" id="myBtn" title="Do góry">Do góry</button>

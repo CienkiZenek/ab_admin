@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('tytul');
             $table->text('tresc');
-            $table->text('wiecej');
+            $table->text('wiecej')->nullable();;
             $table->text('slug');
             $table->string('gatunek')->default('czywiesz'); //gatunek/rodaj tresci - artykuł, wiadomośąc, zasoby, film, modlitwa itp.
             $table->tinyText('zdjecie1')->nullable();

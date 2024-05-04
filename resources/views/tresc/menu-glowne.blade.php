@@ -21,9 +21,6 @@
         <div class="btn-group btn-group-lg " role="group" aria-label="...">
             <a href="{{route('wiadomosciLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Wiadomości
                 <span class="badge bg-warning text-white">{{\App\Models\Wiadomosci::all()->count()}}</span></a>
-            {{--<span class="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-warning">
-   99+
-  </span>--}}
             <a href="{{route('artykulyLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Artykuły
                 <span class="badge bg-warning text-white">{{\App\Models\Artykuly::all()->count()}}</span>
             </a>
@@ -68,9 +65,7 @@
                 <a href="{{route('biogramLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Biogram
                     <span class="badge bg-warning text-white">{{\App\Models\Biogram::all()->count()}}</span>
                 </a>
-               {{-- <a href="{{route('stronyLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Strony
-                <span class="badge bg-warning text-white">{{\App\Models\Strony::all()->count()}}</span>
-                </a>--}}
+
                 <a href="{{route('modlitwyLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Modlitwy
                     <span class="badge bg-warning text-white">{{\App\Models\Modlitwy::all()->count()}}</span>
                 </a>
@@ -108,11 +103,7 @@
     </div>
 
         </div>
-<div class="wys40"></div>
-<div class="wys40"></div>
-<div class="wys40"></div>
-<div class="wys40"></div>
-<div class="wys40"></div>
+
 
 
 
