@@ -47,12 +47,12 @@ break;
 
                 switch ($rodzaj) {
                     case 'Zdjecie1':
-                        $tresc->zdjecie1 = null;
+                        $tresc->zdjecie1 = 0;
                         $tresc->zdjecie1_id = '';
                         $tresc->save();
                         break;
                     case 'Zdjecie2':
-                        $tresc->zdjecie2 = null;
+                        $tresc->zdjecie2 = 0;
                         $tresc->zdjecie2_id = '';
                         $tresc->save();
                         break;
