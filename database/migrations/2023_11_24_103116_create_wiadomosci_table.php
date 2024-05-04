@@ -32,8 +32,8 @@ return new class extends Migration
             $table->tinyText('zdjecie2')->nullable();
             $table->text('zdjecie1_podpis')->nullable();
             $table->text('zdjecie2_podpis')->nullable();
-            $table->bigInteger('zdjecie1_id')->nullable();
-            $table->bigInteger('zdjecie2_id')->nullable();
+            $table->integer('zdjecie1_id')->nullable();
+            $table->integer('zdjecie2_id')->nullable();
             $table->text('ramka1')->nullable();
             $table->text('ramka2')->nullable();
             $table->text('komentarz')->nullable();
