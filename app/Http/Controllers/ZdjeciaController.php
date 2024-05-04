@@ -189,7 +189,7 @@ class ZdjeciaController extends Controller
         if(isset($data['plik'])) {
             // usuwanie starego zdjęcia
 
-            Storage::delete($stareZdjecie);
+            Storage::delete('zdjecia/'.$stareZdjecie);
             $path = $request->file('plik')->storeAs(
                 'zdjecia', $request->file('plik')->getClientOriginalName()
             );
@@ -219,7 +219,7 @@ class ZdjeciaController extends Controller
             // usuwanie starego zdjęcia
 
             if(Str::length($stareDuzeZdjecie)>4){
-            Storage::delete($stareDuzeZdjecie);
+            Storage::delete('zdjecia/'.$stareDuzeZdjecie);
             }
             $path = $request->file('plik_duze')->storeAs(
                 'zdjecia', $request->file('plik_duze')->getClientOriginalName()
@@ -248,10 +248,10 @@ class ZdjeciaController extends Controller
     public function destroy($id)
     {
         $zdjecie = Zdjecia::findOrFail($id);
-        Storage::delete($zdjecie->plik);
+        Storage::delete('zdjecia/'.$zdjecie->plik);
         // usuwanie również dużego zdjęcia - gdy jest
-        if(Str::length($zdjecie->plik_duze)>4){
-            Storage::delete($zdjecie->plik_duze);
+        if(Str::length('zdjecia/'.$zdjecie->plik_duze)>4){
+            Storage::delete('zdjecia/'.$zdjecie->plik_duze);
         }
         $zdjecie->delete();
 

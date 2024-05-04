@@ -136,7 +136,7 @@ Route::get('/plikiSzukaj', [PlikiController::class, 'szukaj'])->name('plikiSzuka
 // Pojedyńczy - edycja
 Route::post('/plikEdycja/{id}', [PlikiController::class, 'edit'])->name('plikEdycja');
 Route::post('/plikEdycjaZapis/{id}', [PlikiController::class, 'update'])->name('plikEdycjaZapis');
-Route::delete('/plikUsun/{id}', [WatkiController::class, 'destroy'])->name('plikUsun');
+Route::delete('/plikUsun/{id}', [PlikiController::class, 'destroy'])->name('plikUsun');
 /* Pliki - koniec*/
 
 /* Pliki załączanie*/

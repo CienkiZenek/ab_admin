@@ -242,8 +242,9 @@ class PlikiController extends Controller
     public function destroy($id)
     {
         $plik = Pliki::findOrFail($id);
+
+        Storage::delete('pliki/'.$plik->plik);
         $plik->delete();
-        Storage::delete($plik->plik);
         session()->flash('komunikat', "Plik został usunięty");
         return redirect()->route('plikiLista');
     }
