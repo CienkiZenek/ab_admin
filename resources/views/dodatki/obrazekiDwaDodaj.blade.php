@@ -60,7 +60,7 @@
         @if($dlugosc1>3)
 
         <span class="badge bg-secondary">Opis obrazka:</span>
-        {{app\Models\Zdjecia::find($tresc->zdjecie1_id)->opis}}
+        {{App\Models\Zdjecia::find($tresc->zdjecie1_id)->opis}}
         @endif
         {{--Obrazek 2--}}
     </div>
@@ -125,7 +125,7 @@
         </div>
         @if($dlugosc2>3)
         <span class="badge bg-secondary">Opis obrazka:</span>
-        {{app\Models\Zdjecia::find($tresc->zdjecie2_id)->opis}}
+        {{App\Models\Zdjecia::find($tresc->zdjecie2_id)->opis}}
         @endif
     </div>
 </div>
