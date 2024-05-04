@@ -172,7 +172,7 @@
     @endif
     <div class="mb-2 md-5"></div>
     @php
-        $powiazania=\app\Services\obrazkiDodawanie::obrazekPowiazania($zdjecie->id, 1000);
+        $powiazania=\App\Services\ObrazkiDodawanie::obrazekPowiazania($zdjecie->id, 1000);
     @endphp
     @if($powiazania->count()>0)
         <div class="row mt-3 mb-5 ">

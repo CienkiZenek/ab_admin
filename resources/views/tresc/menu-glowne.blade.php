@@ -20,18 +20,18 @@
     <div class="row mb-2" >
         <div class="btn-group btn-group-lg " role="group" aria-label="...">
             <a href="{{route('wiadomosciLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Wiadomości
-                <span class="badge bg-warning text-white">{{\app\Models\Wiadomosci::all()->count()}}</span></a>
+                <span class="badge bg-warning text-white">{{\App\Models\Wiadomosci::all()->count()}}</span></a>
             <a href="{{route('artykulyLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Artykuły
-                <span class="badge bg-warning text-white">{{\app\Models\Artykuly::all()->count()}}</span>
+                <span class="badge bg-warning text-white">{{\App\Models\Artykuly::all()->count()}}</span>
             </a>
 
 
 
 
             <a href="{{route('zdjeciaListaDodane')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Zdjęcia
-                <span class="badge bg-warning text-white">{{\app\Models\Zdjecia::all()->count()}}</span></a>
+                <span class="badge bg-warning text-white">{{\App\Models\Zdjecia::all()->count()}}</span></a>
             <a href="{{route('plikiLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Pliki
-                <span class="badge bg-warning text-white">{{\app\Models\Pliki::all()->count()}}</span></a>
+                <span class="badge bg-warning text-white">{{\App\Models\Pliki::all()->count()}}</span></a>
 
         </div>
 
@@ -40,11 +40,11 @@
         <div class="row mb-2" >
             <div class="btn-group btn-group-lg " role="group" aria-label="...">
                 <a href="{{route('biogafiaLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Biografia
-                    <span class="badge bg-warning text-white">{{\app\Models\Biografia::all()->count()}}</span>
+                    <span class="badge bg-warning text-white">{{\App\Models\Biografia::all()->count()}}</span>
                 </a>
 
                 <a href="{{route('kalendariumLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Kalendarium
-                    <span class="badge bg-warning text-white">{{\app\Models\Kalendarium::all()->count()}}</span>
+                    <span class="badge bg-warning text-white">{{\App\Models\Kalendarium::all()->count()}}</span>
                 </a>
                 <a href="{{route('czywieszLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Czy wiesz że...
                     <span class="badge bg-warning text-white">{{\App\Models\Czywiesz::all()->count()}}</span>
