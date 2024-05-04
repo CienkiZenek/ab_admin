@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\listy;
+use App\Models\Listy;
 use Illuminate\Http\Request;
 
 
