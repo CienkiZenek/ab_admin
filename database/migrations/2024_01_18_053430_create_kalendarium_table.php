@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('status', ['Robocze', 'Opublikowane'])->default('Robocze');
             $table->text('naglowek')->nullable();
             $table->text('tresc')->nullable();
-            $table->text('wiecej');
+            $table->text('wiecej')->nullable();
             $table->tinyText('zdjecie1')->nullable();
             $table->tinyText('zdjecie2')->nullable();
             $table->text('zdjecie1_podpis')->nullable();
