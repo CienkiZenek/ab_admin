@@ -34,7 +34,7 @@
             <div class="col-3">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" >Rok:</span>
+                        <span class="input-group-text" >Rok/Lata:</span>
                     </div>
                     <input type="text" class="form-control{{ $errors->has('rok') ? ' is-invalid' : ' ' }}" name="rok" id="rok" value="{{ old('rok') }}" placeholder="Rok..." >
                 </div>
@@ -43,9 +43,9 @@
             <div class="col-6">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" >Dzień i miesiąc:</span>
+                        <span class="input-group-text" >Dzień i miesiąc (opcjonalnie):</span>
                     </div>
-                    <input type="text" class="form-control{{ $errors->has('dzien_mies') ? ' is-invalid' : ' ' }}" name="dzien_mies" id="dzien_mies" value="{{ old('dzien_mies') }}" placeholder="Dzień i miesiąc..." >
+                    <input type="text" class="form-control" name="dzien_mies" id="dzien_mies" value="{{ old('dzien_mies') }}" placeholder="Dzień i miesiąc..." >
                 </div>
             </div>
         </div>

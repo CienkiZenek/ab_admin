@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('biogram', function (Blueprint $table) {
             $table->id();
             $table->text('tresc');
-            $table->text('dzien_mies');
-            $table->year('rok');
+            $table->tinyText('dzien_mies')->nullable();
+            $table->tinyText('rok');
             $table->integer('kolejnosc');;
             $table->timestamps();
         });

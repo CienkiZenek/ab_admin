@@ -30,9 +30,9 @@
     @foreach($Wyniki as $czywiesz)
 
            <div class="col-8 size20"> <a href="{{ route('czywieszEdycja', $czywiesz->id) }}" class="list-group-item list-group-item-action">{{$czywiesz->tytul}}
-                   @if($czywiesz->title=='' || $czywiesz->keywords=='' || $czywiesz->description=='')
+                  {{-- @if($czywiesz->title=='' || $czywiesz->keywords=='' || $czywiesz->description=='')
                        <span style="color: red; font-weight: bold"> SEO!!! </span>
-                   @endif
+                   @endif--}}
                </a>
 
 

@@ -66,17 +66,19 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 mb-3">
             <div class="col-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Treść zasobu:</span>
+                        <span class="input-group-text">Treść:</span>
                     </div>
-                    <textarea class="form-control" name="tresc" id="tresc" rows="14">{{$zasob->tresc}}</textarea>
+                    <textarea class="form-control" name="tresc" id="tresc" rows="25">{{$zasob->tresc}}</textarea>
                 </div>
 
             </div>
         </div>
+        {{--Formatowanie wyświetlanego tesktu--}}
+        @include('dodatki.formatowanie')
 
         @include('dodatki.seo', ['tresc'=>$zasob])
 

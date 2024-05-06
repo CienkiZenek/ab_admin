@@ -14,8 +14,8 @@ class BiogramController extends Controller
         $walidated = Validator::make($data, [
             'tresc' => 'required|min:20',
             'kolejnosc' => 'required|numeric',
-            'rok' => 'required|numeric',
-            'dzien_mies' => 'required|min:5'
+            'rok' => 'required',
+            'dzien_mies' => 'nullable'
 
 
         ])->validate();

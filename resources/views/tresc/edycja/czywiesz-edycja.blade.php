@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="row mt-4">
+        {{--<div class="row mt-4">
             <div class="col-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -43,11 +43,14 @@
                 </div>
 
             </div>
-        </div>
-        @include('dodatki.seo', ['tresc'=>$czywiesz])
-        @if(Str::length($czywiesz->zdjecie1)>4 || Str::length($czywiesz->zdjecie2)>4)
+        </div>--}}
+
+       {{-- @include('dodatki.seo', ['tresc'=>$czywiesz])--}}
+
+        {{--@if(Str::length($czywiesz->zdjecie1)>4 || Str::length($czywiesz->zdjecie2)>4)
             @include('dodatki.podpisyObrazki', ['tresc'=>$czywiesz])
-        @endif
+        @endif--}}
+
         <div class="row mt-5">
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Zapisz</button>
@@ -59,9 +62,9 @@
 
 <div class="mt-4"></div>
     {{-- Dodaj obrazki--}}
-    @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Czywiesz', 'tresc'=>$czywiesz])
+   {{-- @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Czywiesz', 'tresc'=>$czywiesz])--}}
     {{--Dodaj plik--}}
-    @include('dodatki.plikDodaj', ['dzial'=>'Czywiesz', 'tresc'=>$czywiesz])
+    {{--@include('dodatki.plikDodaj', ['dzial'=>'Czywiesz', 'tresc'=>$czywiesz])--}}
 
     <button class="btn btn-danger mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#usuwanie" aria-expanded="false" aria-controls="usuwanie">
         Usuwanie
