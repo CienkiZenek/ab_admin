@@ -288,7 +288,7 @@ class ZdjeciaController extends Controller
 
         $Wyniki= ObrazkiDodawanie::zdjeciaMozliweDlaPublikacji($dzial,$tresc_id);
         if($Wyniki->isNotEmpty()){
-        $Wyniki=$Wyniki->toQuery()->paginate(20);
+        $Wyniki=$Wyniki->toQuery()->paginate(40);
 
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dzial'=>$dzial,

@@ -13,7 +13,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Treść:</span>
                     </div>
-                    <textarea class="form-control{{ $errors->has('tresc') ? ' is-invalid' : ' ' }}"  rows="10" name="tresc" id="tresc" aria-label="opis1:">{{ old('tresc') }}</textarea>
+                    <textarea class="form-control{{ $errors->has('tresc') ? ' is-invalid' : ' ' }}"  rows="4" name="tresc" id="tresc" aria-label="opis1:">{{ old('tresc') }}</textarea>
                 </div>
             </div>
         </div>

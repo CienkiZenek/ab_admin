@@ -60,7 +60,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Opis zasobu:</span>
                     </div>
-                    <input type="text" class="form-control" name="opis" id="opis" value="{{$zasob->opis}}">
+                    {{--<input type="text" class="form-control" name="opis" id="opis" value="{{$zasob->opis}}">--}}
+
+                    <textarea class="form-control" name="opis" id="opis"
+                              rows="3">{{$zasob->opis}}</textarea>
                 </div>
 
             </div>

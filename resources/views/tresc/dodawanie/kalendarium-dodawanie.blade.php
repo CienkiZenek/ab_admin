@@ -58,7 +58,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Nagłówek:</span>
                     </div>
-                    <textarea class="form-control" rows="5" name="naglowek" id="naglowek" aria-label="naglowek1:">{{ old('naglowek') }}</textarea>
+                    <textarea class="form-control" rows="3" name="naglowek" id="naglowek" aria-label="naglowek1:">{{ old('naglowek') }}</textarea>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Treść:</span>
                     </div>
-                    <textarea class="form-control" rows="10" name="tresc" id="tresc" aria-label="tresc1:">{{ old('tresc') }}</textarea>
+                    <textarea class="form-control" rows="5" name="tresc" id="tresc" aria-label="tresc1:">{{ old('tresc') }}</textarea>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@
                         <span class="input-group-text">Treść:</span>
                     </div>
                     <textarea class="form-control{{ $errors->has('tresc') ? ' is-invalid' : ' ' }}" name="tresc" id="tresc"
-                              rows="6">{{$biogram->tresc}}</textarea>
+                              rows="4">{{$biogram->tresc}}</textarea>
                 </div>
 
             </div>

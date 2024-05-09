@@ -53,7 +53,7 @@
                         <span class="input-group-text">Nagłówek:</span>
                     </div>
                     <textarea class="form-control" name="opis" id="opis"
-                              rows="4">{{$kalendarium->naglowek}}</textarea>
+                              rows="3">{{$kalendarium->naglowek}}</textarea>
                 </div>
 
             </div>
@@ -67,7 +67,7 @@
                         <span class="input-group-text">Treść:</span>
                     </div>
                     <textarea class="form-control"  name="tresc" id="tresc"
-                              rows="7">{{$kalendarium->tresc}}</textarea>
+                              rows="4">{{$kalendarium->tresc}}</textarea>
                 </div>
 
             </div>
@@ -79,7 +79,7 @@
                         <span class="input-group-text">Więcej (opcjonalnie):</span>
                     </div>
                     <textarea class="form-control"  name="wiecej" id="wiecej"
-                              rows="7">{{$kalendarium->wiecej}}</textarea>
+                              rows="4">{{$kalendarium->wiecej}}</textarea>
                 </div>
 
             </div>

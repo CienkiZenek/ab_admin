@@ -154,6 +154,9 @@
     </div>
 
     @foreach($Wyniki as $zdjecie)
+        <div class="p-1 mt-1 fs-5" >
+            <span class="badge bg-secondary">Plik: {{$zdjecie->plik}}</span>
+            </div>
 
             <div class="row mt-3  border-bottom border-2" >
            <div class="col-3 fs-6">
@@ -174,10 +177,12 @@
                @endif
            </div>
             <div class="col-3 size20">
-                 {{$zdjecie->opis  }} (<b>{{$zdjecie->kategoria  }}</b>)
-
+                 {{$zdjecie->opis  }} (<b>{{$zdjecie->kategoria}}</b>)</br>
+            @if($zdjecie->duze=='tak')
+                <span class="badge bg-danger text-white">Również duże!</span>
+                @endif
             </div>
-            <div class="col-4 size20">
+            <div class=" col-4 size20">
                 @php
                     $powiazania=\App\Services\ObrazkiDodawanie::obrazekPowiazania($zdjecie->id,6);
 /*dd($powiazania);*/

@@ -52,7 +52,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Opis:</span>
                     </div>
-                    <input type="text" class="form-control" name="opis" id="opis" value="{{ old('opis') }}" placeholder="Opis zasobu..." >
+
+                    {{--<input type="text" class="form-control" name="opis" id="opis" value="{{ old('opis') }}" placeholder="Opis zasobu..." >--}}
+                    <textarea class="form-control" name="opis" id="opis"
+                              rows="7"></textarea>
+
                 </div>
 
             </div>
