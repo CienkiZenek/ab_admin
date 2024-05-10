@@ -54,7 +54,7 @@ class ZdjeciaController extends Controller
 
     public function indexDodane()
     {
-        $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(50);
+        $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
         $Wyniki->map(function ($Wyniki) {
             $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -72,7 +72,7 @@ class ZdjeciaController extends Controller
     {
 
         if($request->kategoria=='wszystkie') {
-            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(0);
+            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -83,7 +83,7 @@ class ZdjeciaController extends Controller
                 ]
             );
         }
-        $Wyniki=Zdjecia::where('kategoria',$request->kategoria)->orderBy('created_at', 'asc')->paginate(0);
+        $Wyniki=Zdjecia::where('kategoria',$request->kategoria)->orderBy('created_at', 'asc')->paginate(100);
         $Wyniki->map(function ($Wyniki) {
             $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
             return $Wyniki;
@@ -101,7 +101,7 @@ class ZdjeciaController extends Controller
        // dd($request->rodzaj);
 
         if($request->kategoria=='wszystkie') {
-            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(0);
+            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -117,7 +117,7 @@ class ZdjeciaController extends Controller
             );
         }
         else {
-            $Wyniki = Zdjecia::where('kategoria', $request->kategoria)->orderBy('created_at', 'asc')->paginate(0);
+            $Wyniki = Zdjecia::where('kategoria', $request->kategoria)->orderBy('created_at', 'asc')->paginate(100);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -288,7 +288,7 @@ class ZdjeciaController extends Controller
 
         $Wyniki= ObrazkiDodawanie::zdjeciaMozliweDlaPublikacji($dzial,$tresc_id);
         if($Wyniki->isNotEmpty()){
-        $Wyniki=$Wyniki->toQuery()->paginate(0);
+        $Wyniki=$Wyniki->toQuery()->paginate(100);
 
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dzial'=>$dzial,
@@ -454,7 +454,7 @@ switch ($request->dzial)
         $Wyniki=Zdjecia::where('opis', 'like', "%$szukane%")
             ->orWhere('plik', 'like', "%$szukane%")
             ->orWhere('kategoria', 'like', "%$szukane%")
-            ->paginate(50);
+            ->paginate(100);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dodawanie'=>'nie'
@@ -466,7 +466,7 @@ switch ($request->dzial)
         $szukane=$request->get('szukane');
         $Wyniki=Zdjecia::where('opis', 'like', "%$szukane%")
             ->orWhere('plik', 'like', "%$szukane%")
-            ->paginate(50);
+            ->paginate(100);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dodawanie'=>'tak',
