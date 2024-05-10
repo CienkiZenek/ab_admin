@@ -81,9 +81,9 @@
                 <a href="{{route('filmyLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Filmy
                     <span class="badge bg-warning text-white">{{\App\Models\Filmy::all()->count()}}</span>
                 </a>
-                <a href="{{route('ksiegarnieLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Książka - gdzie kupić
+                {{--<a href="{{route('ksiegarnieLista')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="">Książka - gdzie kupić
                     <span class="badge bg-warning text-white">{{\App\Models\Ksiegarnie::all()->count()}}</span>
-                </a>
+                </a>--}}
 
 
 
