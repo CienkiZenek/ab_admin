@@ -182,7 +182,20 @@ return $powiazania;
         $zdjeciaPublikacji=$tresc->zdjecia()->get();
        // $Wyniki=$zdjeciaWszystkie->diff($zdjeciaPublikacji);
 
+        dd($zdjeciaPublikacji);
         //dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
+
+        /*$zdjeciaNieUzywane
+
+            foreach ($zdjeciaPublikacji as $item) {
+                // wylicza id zdjecia z kolekcji już użytych zdjęć
+                $id_zdjecia_uzytego
+
+                if ($tresc->tytul == $item->tytul) {
+                    $kolekcja2->forget($kolekcja2->search($item));
+                }
+            }*/
+
         return $zdjeciaWszystkie->diff($zdjeciaPublikacji);
     }
 }

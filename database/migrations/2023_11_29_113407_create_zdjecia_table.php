@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('plik');
             $table->text('plik_duze')->nullable();
             $table->text('autor')->nullable();
-            $table->enum('kategoria', ['Portret', 'Informacja', 'Dokument', 'Publikacja', 'Wydarzenie', 'Gazeta', 'Strachocina', 'Rakowiecka', 'Muzeum', 'Meczenstwo', 'Inne'])->default('Portret');
+            $table->enum('kategoria', ['Portret', 'Informacja', 'Dokument', 'Publikacja', 'Wydarzenie', 'Gazeta', 'Strachocina', 'Rakowiecka', 'Muzeum', 'Meczenstwo', 'Inne', 'Ilustracje', 'Relikwie', 'Miejsca kultu'])->default('Portret');
             $table->enum('duze', ['tak', 'nie'])->default('nie');
             $table->text('opis')->nullable();
             $table->timestamps();
