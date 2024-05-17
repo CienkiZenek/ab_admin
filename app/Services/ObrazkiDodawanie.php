@@ -185,7 +185,7 @@ return $powiazania;
         //dd($zdjeciaPublikacji);
         $fot_roznica=$zdjeciaWszystkie->diff($zdjeciaPublikacji);
        // dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
-dd($fot_roznica);
+//dd($fot_roznica);
         /*$zdjeciaNieUzywane
 
             foreach ($zdjeciaPublikacji as $item) {
