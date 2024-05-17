@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('tytul');
             $table->text('slug');
-            $table->enum('rodzaj', ['Wiadomosc', 'Strona', 'Inna', 'Ogloszenie', 'Wydarzenie'])->default('Wiadomosc');
+            $table->enum('rodzaj', ['Wiadomosc', 'PortalDzialalnosc', 'PortalPublikacjeInych', 'Inna', 'Ogloszenie', 'Wydarzenie'])->default('Wiadomosc');
             $table->date('data')->nullable();
             $table->text('naglowek')->nullable();
             $table->text('tresc')->nullable();

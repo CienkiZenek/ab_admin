@@ -36,7 +36,7 @@ class WiadomosciFactory extends Factory
             'link_url' => $this->faker->url(),
             'data' => $this->faker->date('Y-m-d'),
             'status' => $this->faker->randomElement(['Robocza','Opublikowana']),
-            'rodzaj' => $this->faker->randomElement(['Wiadomosc', 'Strona', 'Inna', 'Ogloszenie', 'Wydarzenie']),
+            'rodzaj' => $this->faker->randomElement(['Wiadomosc', 'PortalDzialalnosc', 'PortalPublikacjeInych', 'Inna', 'Ogloszenie', 'Wydarzenie']),
             'title' => $this->faker->text(50),
             'keywords' => $this->faker->words(4,true),
             'description' => $this->faker->text(120)

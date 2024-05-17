@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('nazwa');
             $table->text('tresc')->nullable();
-            $table->text('tresc_wyszukiwarka')->nullable();// gdy jest załączony plik, to tu dajemy treść dla wyszkiwarki
+            $table->text('tresc_wyszukiwarka')->nullable();// gdy jest załączony plik, to tu dajemy treść dla wyszukiwarki
             $table->text('slug');
             $table->text('opis')->nullable();
             $table->string('gatunek', 10)->default('modlitwa'); //gatunek/rodaj tresci - artykuł, wiadomośąc, zasoby, film, modlitwa itp.

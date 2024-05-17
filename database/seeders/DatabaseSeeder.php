@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
        Intencje::factory(10)->create();
        Filmy::factory(5)->create();
       /* Strony::factory(15)->create();*/
-       Ksiegarnie::factory(12)->create();
+       /*Ksiegarnie::factory(12)->create();*/
        Biogram::factory(12)->create();
         Modlitwy::factory(12)->create();
         Kalendarium::factory(15)->create();
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         Zasoby::factory(12)->create();
         Cytat::factory(15)->create();
         Artykuly::factory(8)->create();
-        Biografia::factory(12)->create();
+       /* Biografia::factory(12)->create();*/
         Pliki::factory(15)->create();
         Zdjecia::factory(12)->create();
 
