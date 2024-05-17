@@ -182,9 +182,10 @@ return $powiazania;
         $zdjeciaPublikacji=$tresc->zdjecia()->get();
        // $Wyniki=$zdjeciaWszystkie->diff($zdjeciaPublikacji);
 
-        dd($zdjeciaPublikacji);
-        //dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
-
+        //dd($zdjeciaPublikacji);
+        $fot_roznica=$zdjeciaWszystkie->diff($zdjeciaPublikacji);
+       // dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
+dd($fot_roznica);
         /*$zdjeciaNieUzywane
 
             foreach ($zdjeciaPublikacji as $item) {
