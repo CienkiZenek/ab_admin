@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="col-12 mb-2">
-        Bobola, Andrzej Bobola, św. Andrzej Bobola, kult świętych, hagiografia, żywoty świętych, relikwie
+        Bobola, Andrzej Bobola, św. Andrzej Bobola, relikwie, kult świętych, modlitwa do św. Andrzeja Boboli, patron Polski, święci, hagiografia, żywoty świętych
     </div>
     <div class="col-12">
         <div class="input-group">

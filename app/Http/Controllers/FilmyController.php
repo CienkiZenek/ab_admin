@@ -44,7 +44,7 @@ class FilmyController extends Controller
 
     public function index()
     {
-        $Wyniki=Filmy::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Filmy::orderBy('created_at', 'desc')->paginate(40);
         return view('tresc.listy.filmy-lista', compact('Wyniki'));
 
     }
@@ -73,7 +73,7 @@ class FilmyController extends Controller
         $szukane=$request->get('szukane');
         $Wyniki=Filmy::where('tytul', 'like', "%$szukane%")
             ->OrWhere('opis', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.filmy-lista', compact('Wyniki'));
     }

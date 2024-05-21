@@ -23,7 +23,7 @@ class CytatController extends Controller
 
     public function index()
     {
-        $Wyniki=Cytat::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Cytat::orderBy('created_at', 'desc')->paginate(40);
         return view('tresc.listy.cytat-lista', compact('Wyniki'));
 
     }
@@ -52,7 +52,7 @@ class CytatController extends Controller
         $szukane=$request->get('szukane');
         $Wyniki=Cytat::where('podpis', 'like', "%$szukane%")
             ->OrWhere('tresc', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.cytat-lista', compact('Wyniki'));
     }

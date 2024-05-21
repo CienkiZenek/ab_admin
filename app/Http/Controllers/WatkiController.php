@@ -29,7 +29,7 @@ class WatkiController extends Controller
 
     public function index()
     {
-        $Wyniki=Watki::orderBy('tytul', 'asc')->paginate(10);
+        $Wyniki=Watki::orderBy('tytul', 'asc')->paginate(40);
         return view('tresc.listy.watki-lista', compact('Wyniki'));
 
     }
@@ -56,7 +56,7 @@ class WatkiController extends Controller
     {
 
        $szukane=$request->get('szukane');
-       $Wyniki=Watki::where('tytul', 'like', "%$szukane%")->paginate(10);
+       $Wyniki=Watki::where('tytul', 'like', "%$szukane%")->paginate(20);
        $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.watki-lista', compact('Wyniki'));
     }
@@ -128,7 +128,7 @@ class WatkiController extends Controller
                       $zasob = Zasoby::findOrFail($request->tresc_id);
                       $zasob->watki()->attach($request->watek_id);
                       $listaRoutName='zasobyLista';
-                      $nazwaListy='Lista zasobów';
+                      $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
                       return view('tresc.edycja.zasoby-edycja', ['zasob'=>$zasob,
                           'nazwaListy'=>$nazwaListy,
                           'listaRoutName'=>$listaRoutName,
@@ -209,7 +209,7 @@ class WatkiController extends Controller
                 $zasob = Zasoby::findOrFail($request->tresc_id);
                 $zasob->watki()->detach($request->watek_id);
                 $listaRoutName='zasobyLista';
-                $nazwaListy='Lista zasobów';
+                $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
                 return view('tresc.edycja.zasoby-edycja', ['zasob'=>$zasob,
                     'nazwaListy'=>$nazwaListy,
                     'listaRoutName'=>$listaRoutName,

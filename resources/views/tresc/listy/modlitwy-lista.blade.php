@@ -29,7 +29,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $modlitwa)
 
-           <div class="col-8 size20"> <a href="{{ route('modlitwyEdycja', $modlitwa->id) }}" class="list-group-item list-group-item-action">{{$modlitwa->nazwa}}
+           <div class="col-12"> <a href="{{ route('modlitwyEdycja', $modlitwa->id) }}" class="list-group-item list-group-item-action">{{$modlitwa->nazwa}}
 
                    @if(Str::length($modlitwa->zdjecie1)>4)
                        <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
@@ -41,6 +41,15 @@
                    @if(Str::length($modlitwa->zdjecie2)>4)
                        <i class="bi bi-image fs-4" style="color: #d63384" title="Zdjęcie2 na głównej!"></i>
                    @endif
+
+                   @if($modlitwa->pliki->count()>0)
+
+                       <i class="bi bi-file-earmark-arrow-down-fill fs-4" style="color: #a52834" title="Załączony plik"></i>
+                   @endif
+                   @if($modlitwa->watki->count()>0)
+                       <i class="bi bi-diagram-2-fill fs-3" style="color: #fd7e14" title="Połączony z wątkiem"></i>
+                   @endif
+
 
                    @if($modlitwa->title=='' || $modlitwa->keywords=='' || $modlitwa->description=='')
                        <span style="color: red; font-weight: bold"> SEO!!! </span>

@@ -11,7 +11,7 @@ class ListyController extends Controller
 
     public function index()
     {
-        $Wyniki=Listy::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Listy::orderBy('created_at', 'desc')->paginate(50);
         return view('tresc.listy.listy-lista', compact('Wyniki'));
     }
 
@@ -46,7 +46,7 @@ class ListyController extends Controller
     {
 
         $szukane=$request->get('szukane');
-        $Wyniki=Listy::where('tresc', 'like', "%$szukane%")->paginate(10);
+        $Wyniki=Listy::where('tresc', 'like', "%$szukane%")->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.listy-lista', compact('Wyniki'));
     }

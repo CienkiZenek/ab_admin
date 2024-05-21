@@ -10,7 +10,7 @@ class IntencjeController extends Controller
 
     public function index()
     {
-        $Wyniki=Intencje::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Intencje::orderBy('created_at', 'desc')->paginate(50);
         return view('tresc.listy.intencje-lista', compact('Wyniki'));
     }
 
@@ -47,7 +47,7 @@ class IntencjeController extends Controller
         $szukane=$request->get('szukane');
         $Wyniki=Intencje::where('tresc_nadeslana', 'like', "%$szukane%")
             ->orWhere('tresc_opublikowana', 'like', "%$szukane%")
-                ->paginate(10);
+                ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.intencje-lista', compact('Wyniki'));
     }

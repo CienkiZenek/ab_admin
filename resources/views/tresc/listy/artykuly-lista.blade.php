@@ -44,7 +44,7 @@
 
 
                    {{$artykul->tytul  }}
- ({{$artykul->data}}), <span class="text-success" title="Rodzaj wiadomości:">{{$artykul->rodzaj}}</span>
+ ({{$artykul->data}}),
 
                        @if(Str::length($artykul->zdjecie1)>4)
                            <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
@@ -56,6 +56,17 @@
                    @if(Str::length($artykul->zdjecie2)>4)
                    <i class="bi bi-image fs-4" style="color: #d63384" title="Zdjęcie2 na głównej!"></i>
                    @endif
+                       @if($artykul->galeria->count()>0)
+                           <i class="bi bi-images fs-4" style="color: #0c63e4" title="Galeria"></i>
+                       @endif
+
+                       @if($artykul->pliki->count()>0)
+
+                           <i class="bi bi-file-earmark-arrow-down-fill fs-4" style="color: #a52834" title="Załączony plik"></i>
+                       @endif
+                       @if($artykul->watki->count()>0)
+                           <i class="bi bi-diagram-2-fill fs-3" style="color: #fd7e14" title="Połączony z wątkiem"></i>
+                       @endif
 
                        @if($artykul->title=='' || $artykul->keywords=='' || $artykul->description=='')
                            <span style="color: red; font-weight: bold"> SEO!!! </span>

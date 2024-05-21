@@ -273,8 +273,7 @@
             <div class="col-3">
                 <button type="submit" name="action" value="zapiszWyjdz" class="btn btn-primary">Zapisz i wyjdź</button>
             </div>
-            <div class="col-4">{{env('APP_URL')}}
-                {{--<button type="submit" name="action" value="podgladWiadomosci" class="btn btn-primary">Podgląd wiadomości</button>--}}
+            <div class="col-4">    {{--<button type="submit" name="action" value="podgladWiadomosci" class="btn btn-primary">Podgląd wiadomości</button>--}}
 
                 <a href="http://{{config('AdminBobola.url_glowny')}}/o15ui3j5i99ew/wiadomosc/{{$wiadomosc->slug}}" class="btn btn-primary btn-sm" role="button" target="_blank" aria-pressed="">Podgląd wiadomości
 

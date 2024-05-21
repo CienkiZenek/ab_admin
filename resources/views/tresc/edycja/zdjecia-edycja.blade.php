@@ -15,21 +15,28 @@
                             <span class="input-group-text" id="rodzaj1">Kategoria:</span>
                         </div>
                         <select class="form-control" id="rodzaj" name="kategoria" aria-label="kategoria" aria-describedby="rodzaj1">
-                            <option value="Portret" @if($zdjecie->kategoria=='Portret') selected @endif>Portret</option>
-                            <option value="Informacja" @if($zdjecie->kategoria=='Informacja') selected @endif>Informacja</option>
-                            <option value="Dokument" @if($zdjecie->kategoria=='Dokument') selected @endif>Dokument</option>
-                            <option value="Publikacja" @if($zdjecie->kategoria=='Publikacja') selected @endif>Publikacja</option>
+
+                            <option value="1938_powrot" @if($zdjecie->kategoria=='1938_powrot') selected @endif>1938 powrót relikwii</option>
                             <option value="Gazeta" @if($zdjecie->kategoria=='Gazeta') selected @endif>Gazeta</option>
-                            <option value="Wydarzenie" @if($zdjecie->kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
-
-                            <option value="Strachocina" @if($zdjecie->kategoria=='Strachocina') selected @endif>Strachocina</option>
-                            <option value="Rakowiecka" @if($zdjecie->kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                            <option value="Dokument" @if($zdjecie->kategoria=='Dokument') selected @endif>Dokument</option>
+                            <option value="Ilustracja" @if($zdjecie->kategoria=='Ilustracja') selected @endif>Ilustracja</option>
+                            <option value="Informacja" @if($zdjecie->kategoria=='Informacja') selected @endif>Informacja</option>
+                            <option value="Kanonizacja_beatyfikacja" @if($zdjecie->kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                            <option value="Meczenstwo" @if($zdjecie->kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
+                            <option value="Male_obrazki" @if($zdjecie->kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
+                            <option value="Miejsca_kultu" @if($zdjecie->kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>
+                            <option value="Modlitwa" @if($zdjecie->kategoria=='Modlitwa') selected @endif>Modlitwa</option>
                             <option value="Muzeum" @if($zdjecie->kategoria=='Muzeum') selected @endif>Muzeum</option>
-                            <option value="Meczenstwo" @if($zdjecie->kategoria=='Meczenstwo') selected @endif>Męczeństwo</option>
-
+                            <option value="Portret" @if($zdjecie->kategoria=='Portret') selected @endif>Portret/Podobizna</option>
+                            <option value="Publikacja" @if($zdjecie->kategoria=='Publikacja') selected @endif>Publikacja</option>
+                            <option value="Rakowiecka" @if($zdjecie->kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                            <option value="Relikwie" @if($zdjecie->kategoria=='Inne') selected @endif>Relikwie</option>
+                            <option value="Strachocina" @if($zdjecie->kategoria=='Strachocina') selected @endif>Strachocina</option>
+                            <option value="Wydarzenie" @if($zdjecie->kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
+                            <option value="Zycie_AB" @if($zdjecie->kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>
                             <option value="Inne" @if($zdjecie->kategoria=='Inne') selected @endif>Inne</option>
 
-{{-- 'Portret', 'Informacja', 'Inne', 'Dokument', 'Publikacja', 'Wydarzenie'--}}
+
                         </select>
                     </div>
 
@@ -147,7 +154,7 @@
             </div>
 
         </div>
-        </div>
+
     </form>
 
 
@@ -171,6 +178,7 @@
 
     @endif
     <div class="mb-2 md-5"></div>
+
     @php
         $powiazania=\App\Services\ObrazkiDodawanie::obrazekPowiazania($zdjecie->id, 1000);
     @endphp
@@ -184,8 +192,8 @@
 
 
             @foreach($powiazania as $powiazanie)
-                {{-- @php  dd($powiazanie); @endphp--}}
-                <div class="col-12"> {{Str::limit($powiazanie->pow_tytul, 70)}} (<i>{{$powiazanie->rodzaj}}</i>, {{$powiazanie->pow_data}}){{----}}</div>
+
+                <div class="col-12"> {{Str::limit($powiazanie->pow_tytul, 70)}} (<i>{{$powiazanie->rodzaj}}</i>, {{$powiazanie->pow_data}})</div>
             @endforeach
         </div>
 

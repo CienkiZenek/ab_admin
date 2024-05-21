@@ -45,7 +45,7 @@ class KalendariumController extends Controller
 
     public function index()
     {
-        $Wyniki=Kalendarium::orderBy('data', 'asc')->paginate(20);
+        $Wyniki=Kalendarium::orderBy('data', 'asc')->paginate(40);
         return view('tresc.listy.kalendarium-lista', compact('Wyniki'));
 
     }
@@ -62,7 +62,7 @@ class KalendariumController extends Controller
     {
         $mies=$request->get('mies');
         /*dd($mies);*/
-        $Wyniki=Kalendarium::where('mies', $mies)->orderBy('data', 'asc')->paginate(20);
+        $Wyniki=Kalendarium::where('mies', $mies)->orderBy('data', 'asc')->paginate(30);
         return view('tresc.listy.kalendarium-lista', compact('Wyniki'));
 
     }
@@ -98,7 +98,7 @@ class KalendariumController extends Controller
             ->OrWhere('tresc', 'like', "%$szukane%")
             ->OrWhere('mies_tekst', 'like', "%$szukane%")
             ->OrWhere('dzien', 'like', "%$szukane%")
-            ->paginate(20);
+            ->paginate(30);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.kalendarium-lista', compact('Wyniki'));
     }

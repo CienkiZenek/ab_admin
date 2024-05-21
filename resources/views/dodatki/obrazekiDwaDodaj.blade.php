@@ -96,7 +96,8 @@
                         <input type="hidden" name="tryb" value="dodawanie"/>
                         {{--<a href="{{route('zdjeciaDodajDo', ['tresc_id'=>$tresc->id, 'tryb'=>'dodawanie', 'dzial'=>$dzial,'rodzaj'=>'Zdjecie1'])}}" class="btn btn-primary" role="button" aria-pressed="">Dodaj zdjęcie 1</a>--}}
                         <button type="submit" id="dodaj2" class="btn btn-primary">Dodaj zdjęcie 2</button>
-                        <div>Oriantacja pozioma - do "karuzeli" na stronie glównej!</div>
+                        <div>1000 (szer) x750 (wys) px (do "karuzeli")</div>
+
                     </form>
 
                 </div>

@@ -16,21 +16,51 @@
                     </div>
 
                     <select class="form-control" id="kategoria" name="kategoria" aria-label="kategoria" aria-describedby="kategoria1">
-                        <option value="Portret" >Portret</option>
-                        <option value="Informacja" >Informacja</option>
-                        <option value="Dokument" >Dokument</option>
-                        <option value="Publikacja" >Publikacja</option>
+
+
+                        <option value="1938_powrot" >1938 powrót relikwii</option>
                         <option value="Gazeta" >Gazeta</option>
-                        <option value="Wydarzenie" >Wydarzenie</option>
-                        <option value="Strachocina" >Strachocina</option>
-                        <option value="Rakowiecka" >Rakowiecka</option>
-                        <option value="Muzeum" >Muzeum</option>
+                        <option value="Dokument" >Dokument</option>
+                        <option value="Ilustracje" >Ilustracja</option>
+                        <option value="Informacja" >Informacja</option>
+                        <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
                         <option value="Meczenstwo" >Męczeństwo</option>
-                       <option value="Inne" >Inne</option>
+                        <option value="Male_obrazki" >Małe obrazki</option>
+                        <option value="Miejsca_kultu" >Miejsca kultu</option>
+                        <option value="Modlitwa" >Modlitwa</option>
+                        <option value="Muzeum" >Muzeum</option>
+                        <option value="Portret" selected>Portret/Podobizna</option>
+                        <option value="Publikacja" >Publikacja</option>
+                        <option value="Rakowiecka" >Rakowiecka</option>
+                        <option value="Relikwie" >Relikwie</option>
+                        <option value="Strachocina" >Strachocina</option>
+                        <option value="Wydarzenie" >Wydarzenie</option>
+                        <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
+                        <option value="Inne" >Inne</option>
                     </select>
                 </div>
-
-
+{{--
+kategorie:
+                        1938_powrot
+                        Gazeta
+                         Dokument
+                         Ilustracja
+                         Informacja
+                         Kanonizacja_beatyfikacja
+                         Meczenstwo
+                         Male_obrazki
+                         Miejsca_kultu
+                         Modlitwa
+                         Muzeum
+                         Portret
+                         Publikacja
+                         Rakowiecka
+                         Relikwie
+                         Strachocina
+                         Wydarzenie
+                         Zycie_AB
+                         Inne
+--}}
             </div>
 
             <div class="col-8">

@@ -26,7 +26,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $list)
 
-           <div class="col-8 size20"> <a href="{{ route('listEdycja', $list->id) }}" class="list-group-item list-group-item-action">
+           <div class="col-12"> <a href="{{ route('listEdycja', $list->id) }}" class="list-group-item list-group-item-action">
                    @if($list->status=='Zrobic')
                        <i class="bi bi-arrows-expand-vertical fs-4 " style="color: orange" title="Robocza"></i>
                    @endif

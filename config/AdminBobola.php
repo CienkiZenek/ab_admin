@@ -4,7 +4,7 @@
  * */
 return [
 
-    'wersja' => env('APP_VERSION', '1.1'),
+    'wersja' => env('APP_VERSION', '1.2'),
     'url_glowny' => env('APP_ADRES_MASTER', 'andrzejbobola.info'),
 
 

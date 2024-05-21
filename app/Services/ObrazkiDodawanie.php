@@ -143,7 +143,7 @@ return $powiazania;
     public static function zdjeciaMozliweDlaPublikacji($dzial, $tresc_id)
     {
 
-        $zdjeciaWszystkie=Zdjecia::all();
+        $zdjeciaWszystkie=Zdjecia::all()->sortByDesc('created_at');
 
         switch ($dzial)
         {
@@ -186,7 +186,118 @@ return $powiazania;
 
        // dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
 
-
         return $zdjeciaWszystkie->diff($zdjeciaPublikacji);
+    }
+
+    public static function zdjeciaMozliweDlaPublikacjiZeZbioru($zbiorZdjec, $dzial, $tresc_id)
+    {
+
+        $zdjeciaMozliweDlaPublikacjiZeZbioru=$zbiorZdjec->sortByDesc('created_at');
+
+
+        switch ($dzial)
+        {
+
+            case 'Wiadomosci':
+                $tresc=Wiadomosci::find($tresc_id);
+                break;
+            case 'Czywiesz':
+                $tresc=Czywiesz::find($tresc_id);
+                break;
+            case 'Kalendarium':
+                $tresc=Kalendarium::find($tresc_id);
+                break;
+            case 'Modlitwy':
+                $tresc=Modlitwy::find($tresc_id);
+                break;
+            case 'Zasoby':
+                $tresc=Zasoby::find($tresc_id);
+                break;
+            case 'Pliki':
+                $tresc=Pliki::find($tresc_id);
+                break;
+            case 'Strony':
+                $tresc=Strony::find($tresc_id);
+                break;
+            case 'Biografia':
+                $tresc=Biografia::find($tresc_id);
+                break;
+            case 'Artykuly':
+                $tresc=Artykuly::find($tresc_id);
+                break;
+            default:
+                return 'Brak pozycji plikiMozliweDlaPublikacji';
+
+        }
+        $zdjeciaPublikacji=$tresc->zdjecia()->get();
+          return $zdjeciaMozliweDlaPublikacjiZeZbioru->diff($zdjeciaPublikacji);
+    }
+
+    // funkvja do zmiany wyświetlanej nazy kategorii z faktycznej na "ludzką"
+
+    public static function ludzkaKategoria($kategoriaTabela)
+    {
+        switch ($kategoriaTabela) {
+
+            case '1938_powrot':
+                $kategoria = '1938 powrót relikwii';
+                break;
+            case 'Gazeta':
+                $kategoria = 'Gazeta';
+                break;
+            case 'Dokument':
+                $kategoria = 'Dokument';
+                break;
+            case 'Ilustracja':
+                $kategoria = 'Ilustracja';
+                break;
+            case 'Informacja':
+                $kategoria = 'Informacja';
+                break;
+            case 'Kanonizacja_beatyfikacja':
+                $kategoria = 'Kanonizacja - beatyfikacja';
+                break;
+            case 'Meczenstwo':
+                $kategoria = 'Męczeństwo';
+                break;
+            case 'Male_obrazki':
+                $kategoria = 'Małe obrazki';
+                break;
+            case 'Miejsca_kultu':
+                $kategoria = 'Miejsca kultu';
+                break;
+            case 'Modlitwa':
+                $kategoria = 'Modlitwa';
+                break;
+            case 'Muzeum':
+                $kategoria = 'Muzeum';
+                break;
+            case 'Portret':
+                $kategoria = 'Portret/Podobizna';
+                break;
+            case 'Publikacja':
+                $kategoria = 'Publikacja';
+                break;
+            case 'Rakowiecka':
+                $kategoria = 'Rakowiecka';
+                break;
+            case 'Strachocina':
+                $kategoria = 'Strachocina';
+                break;
+
+            case 'Wydarzenie':
+                $kategoria = 'Wydarzenie';
+                break;
+            case 'Zycie_AB':
+                $kategoria = 'Życie Andrzeja Boboli';
+                break;
+            case 'Inne':
+                $kategoria = 'Inne';
+                break;
+
+            default:
+                $kategoria = 'Portret';
+        }
+return $kategoria;
     }
 }

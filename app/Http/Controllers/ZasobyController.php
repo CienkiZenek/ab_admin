@@ -49,7 +49,7 @@ class ZasobyController extends Controller
 
     public function index()
     {
-        $Wyniki=Zasoby::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Zasoby::orderBy('created_at', 'desc')->paginate(40);
         return view('tresc.listy.zasoby-lista', compact('Wyniki'));
 
     }
@@ -58,7 +58,7 @@ class ZasobyController extends Controller
     public function nowy()
     {
         $listaRoutName='zasobyLista';
-        $nazwaListy='Lista zasobów';
+        $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
         return view('tresc.dodawanie.zasoby-dodawanie',['nazwaListy'=>$nazwaListy,
             'listaRoutName'=>$listaRoutName]);
     }
@@ -78,7 +78,7 @@ class ZasobyController extends Controller
         $szukane=$request->get('szukane');
         $Wyniki=Zasoby::where('nazwa', 'like', "%$szukane%")
             ->OrWhere('opis', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.zasoby-lista', compact('Wyniki'));
     }
@@ -88,7 +88,7 @@ class ZasobyController extends Controller
     {
         $zasob = Zasoby::findOrFail($id);
         $listaRoutName='zasobyLista';
-        $nazwaListy='Lista zasobów';
+        $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
         return view('tresc.edycja.zasoby-edycja', ['zasob'=>$zasob,
             'nazwaListy'=>$nazwaListy,
             'listaRoutName'=>$listaRoutName

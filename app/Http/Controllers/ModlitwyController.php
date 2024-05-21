@@ -47,7 +47,7 @@ class ModlitwyController extends Controller
     }
     public function index()
     {
-        $Wyniki=Modlitwy::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Modlitwy::orderBy('created_at', 'desc')->paginate(40);
         return view('tresc.listy.modlitwy-lista', compact('Wyniki'));
 
     }
@@ -79,7 +79,7 @@ class ModlitwyController extends Controller
             ->OrWhere('opis', 'like', "%$szukane%")
             ->OrWhere('zrodlo_nazwa', 'like', "%$szukane%")
             ->OrWhere('zrodlo_link', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.modlitwy-lista', compact('Wyniki'));
     }

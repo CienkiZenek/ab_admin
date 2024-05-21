@@ -189,7 +189,7 @@ return $powiazania;
                     $zasob->pliki()->detach($plik_id);
                 }
                 $listaRoutName='zasobyLista';
-                $nazwaListy='Lista zasobów';
+                $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
                 $galeria=$zasob->galeria;
                 return view('tresc.edycja.zasoby-edycja', ['zasob'=>$zasob,
                     'nazwaListy'=>$nazwaListy,

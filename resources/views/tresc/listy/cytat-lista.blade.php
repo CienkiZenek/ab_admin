@@ -29,7 +29,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $cytat)
 
-           <div class="col-8 size20"> <a href="{{ route('cytatEdycja', $cytat->id) }}" class="list-group-item list-group-item-action">{{Str::Limit($cytat->tresc, 80)}}
+           <div class="col-12"> <a href="{{ route('cytatEdycja', $cytat->id) }}" class="list-group-item list-group-item-action">{{Str::Limit($cytat->tresc, 80)}}
                    (<i>{{$cytat->podpis}}</i>)
                </a>
 

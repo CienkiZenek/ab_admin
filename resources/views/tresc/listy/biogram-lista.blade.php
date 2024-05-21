@@ -29,7 +29,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $biogram)
 
-           <div class="col-12 size20"> <a href="{{ route('biogramEdycja', $biogram->id) }}" class="list-group-item list-group-item-action">({{$biogram->kolejnosc}})
+           <div class="col-12 "> <a href="{{ route('biogramEdycja', $biogram->id) }}" class="list-group-item list-group-item-action">({{$biogram->kolejnosc}})
                    <strong>{{$biogram->rok}}</strong>, <strong>{{$biogram->dzien_mies}}</strong> {{Str::limit($biogram->tresc, 70)}} </a>
 
 

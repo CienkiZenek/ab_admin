@@ -46,9 +46,19 @@
 
                         <span class="badge bg-warning fs-6 text-dark"><a href="{{route($listaRoutName)}}" class="link-dark text-decoration-none">{{$nazwaListy}}
 </a></span>
+
                     @endif
                     @endif
             </div>
+
+            @if(isset($tryb_edycji_zdjecia))
+                <div class="col-2 ">
+                <span class="badge bg-warning fs-6 text-dark"><a href="{{route('zdjecieNowe')}}" class="link-dark text-decoration-none">Dodaj nowe zdjęcie
+</a></span>
+        </div>
+            @endif
+
+
 
         </div>
     @endif

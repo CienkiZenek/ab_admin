@@ -17,7 +17,7 @@ class ZdjeciaFactory extends Factory
     public function definition(): array
     {
         return [
-            'kategoria' => $this->faker->randomElement(['Portret', 'Informacja', 'Dokument', 'Publikacja', 'Wydarzenie', 'Gazeta', 'Strachocina', 'Rakowiecka', 'Muzeum', 'Meczenstwo', 'Inne', 'Ilustracje', 'Relikwie', 'Miejsca kultu', 'Modlitwa']),
+            'kategoria' => $this->faker->randomElement(['Portret', 'Informacja', 'Dokument', 'Publikacja', 'Wydarzenie', 'Gazeta', 'Strachocina', 'Rakowiecka', 'Muzeum', 'Meczenstwo', 'Inne', 'Ilustracje', 'Relikwie', 'Modlitwa']),
             'opis' => $this->faker->text(120),
             'autor' => $this->faker->text(15),
             'plik'=> $this->faker->image('storage/app/public/zdjecia',1200,900,null,false)

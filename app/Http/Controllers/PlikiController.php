@@ -61,7 +61,7 @@ class PlikiController extends Controller
         {
 
           /*  $this->index();*/
-            $Wyniki=Pliki::orderBy('created_at', 'desc')->paginate(40);
+            $Wyniki=Pliki::orderBy('created_at', 'desc')->paginate(80);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('pliki_powiazania')->where('pliki_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -76,7 +76,7 @@ class PlikiController extends Controller
 
         }
         else {
-        $Wyniki=Pliki::where('rodzaj',$request->rodzaj)->orderBy('created_at', 'asc')->paginate(40);
+        $Wyniki=Pliki::where('rodzaj',$request->rodzaj)->orderBy('created_at', 'asc')->paginate(80);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('pliki_powiazania')->where('pliki_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -94,7 +94,7 @@ class PlikiController extends Controller
         {
 
             /*  $this->index();*/
-            $Wyniki=Pliki::orderBy('created_at', 'desc')->paginate(40);
+            $Wyniki=Pliki::orderBy('created_at', 'desc')->paginate(200);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('pliki_powiazania')->where('pliki_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -114,7 +114,7 @@ class PlikiController extends Controller
 
         }
         else {
-            $Wyniki=Pliki::where('rodzaj',$request->rodzaj)->orderBy('created_at', 'asc')->paginate(40);
+            $Wyniki=Pliki::where('rodzaj',$request->rodzaj)->orderBy('created_at', 'asc')->paginate(200);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('pliki_powiazania')->where('pliki_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -156,7 +156,7 @@ class PlikiController extends Controller
             ->orWhere('plik', 'like', "%$szukane%")
             ->orWhere('typ', 'like', "%$szukane%")
             ->orWhere('rodzaj', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(200);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.pliki-lista', ['Wyniki'=>$Wyniki,
             'dodawanie'=>'tak',
@@ -268,7 +268,7 @@ class PlikiController extends Controller
         $Wyniki= PlikiDodawanie::plikiMozliweDlaPublikacji($dzial, $tresc_id);
 
         if($Wyniki->isNotEmpty()){
-            $Wyniki=$Wyniki->toQuery()->paginate(20);
+            $Wyniki=$Wyniki->toQuery()->paginate(200);
 
             return view('tresc.listy.pliki-lista', ['Wyniki'=>$Wyniki,
                 'dzial'=>$dzial,

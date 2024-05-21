@@ -1,9 +1,9 @@
 @extends('szablon.szablon')
-@section('title', 'Wiadomości - lista')
+@section('title', 'Aktualności - lista')
 @section('tresc')
 
     <p class="badge bg-secondary fs-5">
-        Lista wiadomosci (wszystkich: {{\App\Models\Wiadomosci::all()->count()}}, opublikowanych:
+        Lista aktualności (wszystkich: {{\App\Models\Wiadomosci::all()->count()}}, opublikowanych:
         {{\App\Models\Wiadomosci::where('status','Opublikowana')->count()}},
         roboczych: {{\App\Models\Wiadomosci::where('status','Robocza')->count()}}):
     </p>
@@ -21,7 +21,7 @@
             </form>
         </div>
         <div class="col-6">
-            <a href="{{route('wiadomoscNowa')}}" class="btn btn-primary" role="button" aria-pressed="true">Dodaj nową wiadomość</a>
+            <a href="{{route('wiadomoscNowa')}}" class="btn btn-primary" role="button" aria-pressed="true">Dodaj nową aktualność</a>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $wiadomosc)
 
-           <div class="col-12 size20"> <a href="{{ route('wiadomoscEdycja', $wiadomosc->slug) }}" class="list-group-item list-group-item-action">
+           <div class="col-12 "> <a href="{{ route('wiadomoscEdycja', $wiadomosc->slug) }}" class="list-group-item list-group-item-action">
 
 
                    @if($wiadomosc->status=='Robocza')
@@ -58,6 +58,16 @@
                    @if(Str::length($wiadomosc->zdjecie2)>4)
                    <i class="bi bi-image fs-4" style="color: #d63384" title="Zdjęcie2 na głównej!"></i>
                    @endif
+                       @if($wiadomosc->galeria->count()>0)
+                           <i class="bi bi-images fs-4" style="color: #0c63e4" title="Galeria"></i>
+                       @endif
+                       @if($wiadomosc->pliki->count()>0)
+
+                           <i class="bi bi-file-earmark-arrow-down-fill fs-4" style="color: #a52834" title="Załączony plik"></i>
+                       @endif
+                       @if($wiadomosc->watki->count()>0)
+                           <i class="bi bi-diagram-2-fill fs-3" style="color: #fd7e14" title="Połączony z wątkiem"></i>
+                       @endif
 
                        @if($wiadomosc->title=='' || $wiadomosc->keywords=='' || $wiadomosc->description=='')
                            <span style="color: red; font-weight: bold"> SEO!!! </span>

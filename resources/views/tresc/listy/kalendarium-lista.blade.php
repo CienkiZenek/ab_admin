@@ -74,7 +74,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $kalendarium)
 
-           <div class="col-8 size20"> <a href="{{ route('kalendariumEdycja', $kalendarium->id) }}" class="list-group-item list-group-item-action">
+           <div class="col-12"> <a href="{{ route('kalendariumEdycja', $kalendarium->id) }}" class="list-group-item list-group-item-action">
                    @if($kalendarium->status=='Robocze')
                        <i class="bi  bi-pencil-square fs-3 " style="color: #bb2d3b" title="Robocze"></i>
                    @endif
@@ -86,6 +86,13 @@
                    {{--@if($kalendarium->title=='' || $kalendarium->keywords=='' || $kalendarium->description=='')
                        <span style="color: red; font-weight: bold"> SEO!!! </span>
                    @endif--}}
+                       @if(Str::length($kalendarium->zdjecie1)>4)
+                           <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
+                       @endif
+                       @if($kalendarium->pliki->count()>0)
+
+                           <i class="bi bi-file-earmark-arrow-down-fill fs-4" style="color: #a52834" title="Załączony plik"></i>
+                       @endif
                </a>
 
 

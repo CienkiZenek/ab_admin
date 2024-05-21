@@ -38,7 +38,7 @@ class CzywieszController extends Controller
 
     public function index()
     {
-        $Wyniki=Czywiesz::orderBy('created_at', 'desc')->paginate(10);
+        $Wyniki=Czywiesz::orderBy('created_at', 'desc')->paginate(40);
         return view('tresc.listy.czywiesz-lista', compact('Wyniki'));
 
     }
@@ -67,7 +67,7 @@ class CzywieszController extends Controller
         $szukane=$request->get('szukane');
         $Wyniki=Czywiesz::where('tytul', 'like', "%$szukane%")
             ->OrWhere('tresc', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(20);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.czywiesz-lista', compact('Wyniki'));
     }

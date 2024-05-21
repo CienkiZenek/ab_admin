@@ -29,7 +29,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $watek)
 
-           <div class="col-8 size20"> <a href="{{ route('watekEdycja', $watek->slug) }}" class="list-group-item list-group-item-action">{{$watek->tytul  }} </a>
+           <div class="col-12"> <a href="{{ route('watekEdycja', $watek->slug) }}" class="list-group-item list-group-item-action">{{$watek->tytul  }} </a>
 
 
            </div>

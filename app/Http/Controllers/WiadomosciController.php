@@ -82,14 +82,14 @@ class WiadomosciController extends Controller
 
     public function index()
     {
-        $Wyniki=Wiadomosci::orderBy('created_at', 'desc')->paginate(30);
+        $Wyniki=Wiadomosci::orderBy('created_at', 'desc')->paginate(50);
         return view('tresc.listy.wiadomosci-lista', compact('Wyniki'));
     }
 
 
     public function nowa()
     {$listaRoutName='wiadomosciLista';
-        $nazwaListy='Lista wiadomości';
+        $nazwaListy='Lista aktualności';
         return view('tresc.dodawanie.wiadomosci-dodawanie', ['nazwaListy'=>$nazwaListy,
             'listaRoutName'=>$listaRoutName]);
     }
@@ -121,7 +121,7 @@ class WiadomosciController extends Controller
             ->orWhere('film_podpis', 'like', "%$szukane%")
             ->orWhere('zdjecie1_podpis', 'like', "%$szukane%")
             ->orWhere('zdjecie2_podpis', 'like', "%$szukane%")
-            ->paginate(10);
+            ->paginate(30);
 
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.wiadomosci-lista', compact('Wyniki'));
@@ -134,7 +134,7 @@ class WiadomosciController extends Controller
     {
         $wiadomosc = Wiadomosci::whereSlug($slug)->firstOrFail();
         $listaRoutName='wiadomosciLista';
-        $nazwaListy='Lista wiadomości';
+        $nazwaListy='Lista aktualności';
         return view('tresc.edycja.wiadomosci-edycja', ['wiadomosc'=>$wiadomosc,
             'nazwaListy'=>$nazwaListy,
             'listaRoutName'=>$listaRoutName
@@ -158,7 +158,7 @@ class WiadomosciController extends Controller
         else{
 
             $listaRoutName='wiadomosciLista';
-            $nazwaListy='Lista wiadomości';
+            $nazwaListy='Lista aktualności';
             return view('tresc.edycja.wiadomosci-edycja', ['wiadomosc'=>$wiadomosc,
                 'nazwaListy'=>$nazwaListy,
                 'listaRoutName'=>$listaRoutName

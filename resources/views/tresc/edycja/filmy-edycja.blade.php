@@ -87,6 +87,9 @@
 
             </div>
         </div>
+        <div class="col-12 mb-2">
+            https://www.youtube.com/embed/
+        </div>
 
         @include('dodatki.seo', ['tresc'=>$film])
         <div class="row mt-2">

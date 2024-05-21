@@ -26,7 +26,7 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $intencja)
 
-           <div class="col-8 size20"> <a href="{{ route('intencjaEdycja', $intencja->id) }}" class="list-group-item list-group-item-action">
+           <div class="col-12"> <a href="{{ route('intencjaEdycja', $intencja->id) }}" class="list-group-item list-group-item-action">
                    @if($intencja->status=='Archiwum')
                        <i class="bi bi-window-stack fs-4" style="color: orange" title="Archiwum"></i>
                    @endif

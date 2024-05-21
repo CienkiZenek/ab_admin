@@ -54,7 +54,7 @@ class ZdjeciaController extends Controller
 
     public function indexDodane()
     {
-        $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
+        $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(200);
         $Wyniki->map(function ($Wyniki) {
             $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -72,7 +72,7 @@ class ZdjeciaController extends Controller
     {
 
         if($request->kategoria=='wszystkie') {
-            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
+            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(200);
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -83,7 +83,7 @@ class ZdjeciaController extends Controller
                 ]
             );
         }
-        $Wyniki=Zdjecia::where('kategoria',$request->kategoria)->orderBy('created_at', 'asc')->paginate(100);
+        $Wyniki=Zdjecia::where('kategoria',$request->kategoria)->orderBy('created_at', 'desc')->paginate(200);
         $Wyniki->map(function ($Wyniki) {
             $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
             return $Wyniki;
@@ -101,11 +101,25 @@ class ZdjeciaController extends Controller
        // dd($request->rodzaj);
 
         if($request->kategoria=='wszystkie') {
-            $Wyniki=Zdjecia::orderBy('created_at', 'desc')->paginate(100);
+            $WynikiWyszukania=Zdjecia::orderBy('created_at', 'desc')->paginate(200);
+
+
+// wyszukiwanie, jakie zdjęcia z wyszukanych byly już użyte dla tej treści i usunięci ich
+            $zdjeciaMozliweDlaPublikacjiZeZbioru=ObrazkiDodawanie::zdjeciaMozliweDlaPublikacjiZeZbioru($WynikiWyszukania, $request->dzial, $request->tresc_id);
+            if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0) {
+                $Wyniki = $zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+            }
+            else
+            {
+                $infoSystemowe="Brak zdjęć do dodania!";
+                return view('dodatki.informacjeSystemowe', ['infoSystemowe'=>$infoSystemowe]);
+            }
+
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
             });
+
             return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
                     'dodawanie'=>'tak',
                     'dzial'=>$request->dzial,
@@ -117,7 +131,19 @@ class ZdjeciaController extends Controller
             );
         }
         else {
-            $Wyniki = Zdjecia::where('kategoria', $request->kategoria)->orderBy('created_at', 'asc')->paginate(100);
+            $WynikiWyszukania = Zdjecia::where('kategoria', $request->kategoria)->orderBy('created_at', 'desc')->paginate(200);
+
+            // wyszukiwanie, jakie zdjęcia z wyszukanych byly już użyte dla tej treści i usunięci ich
+            $zdjeciaMozliweDlaPublikacjiZeZbioru=ObrazkiDodawanie::zdjeciaMozliweDlaPublikacjiZeZbioru($WynikiWyszukania, $request->dzial, $request->tresc_id);
+
+            if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0){
+            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+            }
+            else
+            {
+                $infoSystemowe="Brak zdjęć do dodania!";
+                return view('dodatki.informacjeSystemowe', ['infoSystemowe'=>$infoSystemowe]);
+            }
             $Wyniki->map(function ($Wyniki) {
                 $Wyniki->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $Wyniki->id)->count();
                 return $Wyniki;
@@ -164,10 +190,13 @@ class ZdjeciaController extends Controller
         $zdjecie=Zdjecia::findOrFail($id);
         $zdjecie->liczbaDodan = DB::table('zdjecia_powiazania')->where('zdjecia_id', $zdjecie->id)->count();
         $listaRoutName='zdjeciaListaDodane';
+        $tryb_edycji_zdjecia='tak';
         $nazwaListy='Lista zdjęć';
         return view('tresc.edycja.zdjecia-edycja', ['zdjecie'=>$zdjecie,
                 'nazwaListy'=>$nazwaListy,
-                'listaRoutName'=>$listaRoutName
+                'listaRoutName'=>$listaRoutName,
+                'tryb_edycji_zdjecia'=>$tryb_edycji_zdjecia
+
             ]
         );
     }
@@ -196,12 +225,13 @@ class ZdjeciaController extends Controller
             $data['plik'] = $request->file('plik')->getClientOriginalName();
             /*$data['plik'] = $path;*/
         }
-
+        $tryb_edycji_zdjecia='tak';
         $zdjecie->update($data);
         session()->flash('komunikat', "Zdjęcie zostało zaktualizowane!");
         return view('tresc.edycja.zdjecia-edycja', ['zdjecie'=>$zdjecie,
                 'nazwaListy'=>$nazwaListy,
-                'listaRoutName'=>$listaRoutName
+                'listaRoutName'=>$listaRoutName,
+                'tryb_edycji_zdjecia'=>$tryb_edycji_zdjecia
             ]
         );
     }
@@ -230,12 +260,13 @@ class ZdjeciaController extends Controller
            /*$data['plik_duze'] = $path;*/
 
         }
-
+        $tryb_edycji_zdjecia='tak';
         $zdjecie->update($data);
         session()->flash('komunikat', "Duże zdjęcie zostało dodane/zaktualizowane!");
         return view('tresc.edycja.zdjecia-edycja', ['zdjecie'=>$zdjecie,
                 'nazwaListy'=>$nazwaListy,
-                'listaRoutName'=>$listaRoutName
+                'listaRoutName'=>$listaRoutName,
+                'tryb_edycji_zdjecia'=>$tryb_edycji_zdjecia
             ]
         );
 
@@ -288,7 +319,7 @@ class ZdjeciaController extends Controller
 
         $Wyniki= ObrazkiDodawanie::zdjeciaMozliweDlaPublikacji($dzial,$tresc_id);
         if($Wyniki->isNotEmpty()){
-        $Wyniki=$Wyniki->toQuery()->paginate(100);
+        $Wyniki=$Wyniki->toQuery()->paginate(200);
 
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dzial'=>$dzial,
@@ -317,7 +348,7 @@ class ZdjeciaController extends Controller
 
         // usuwamy powiązania z tabeli pośredniej - >zmiana zdjęcia
 // w zależności do czego załączamy zdjęcia zapisujemy powiązanie do tabeli posredniej "zdjecia_powiazania
-        // potem zapisujemy plik zdjecia w tabeli odpwiedniego działu - wiadomosći, artykulu itp
+        // potem zapisujemy plik zdjecia w tabeli odpwiedniego działu - wiadomosći, artykułu itp
         // na końcu wracamy do widoku edycji dzialu
 
         $plikZdjecia=Zdjecia::find($request->zdjecie_id)->plik;
@@ -372,7 +403,7 @@ switch ($request->dzial)
         $zasob = Zasoby::findOrFail($request->tresc_id);
         ObrazkiDodawanie::obrazekDodaj($zasob, $request->rodzaj, $plikZdjecia, $zdjecie->id, $request->tryb);
         $listaRoutName='zasobyLista';
-        $nazwaListy='Lista zasobów';
+        $nazwaListy='"Zdjęcia, dokumenty, książki" - lista';
         $galeria=$zasob->galeria;
         return view('tresc.edycja.zasoby-edycja', ['zasob'=>$zasob,
             'nazwaListy'=>$nazwaListy,
@@ -452,7 +483,9 @@ switch ($request->dzial)
     {
         $szukane=$request->get('szukane');
         $Wyniki=Zdjecia::where('opis', 'like', "%$szukane%")
+            ->orWhere('autor', 'like', "%$szukane%")
             ->orWhere('plik', 'like', "%$szukane%")
+            ->orWhere('plik_duze', 'like', "%$szukane%")
             ->orWhere('kategoria', 'like', "%$szukane%")
             ->paginate(100);
         $Wyniki->appends(['szukane'=>$szukane]);
@@ -464,10 +497,32 @@ switch ($request->dzial)
     public function szukajDodawanie(Request $request)
     {
         $szukane=$request->get('szukane');
-        $Wyniki=Zdjecia::where('opis', 'like', "%$szukane%")
+        $WynikiWyszukania=Zdjecia::where('opis', 'like', "%$szukane%")
+            ->orWhere('autor', 'like', "%$szukane%")
             ->orWhere('plik', 'like', "%$szukane%")
-            ->paginate(100);
-        $Wyniki->appends(['szukane'=>$szukane]);
+            ->orWhere('plik_duze', 'like', "%$szukane%")
+            ->orWhere('kategoria', 'like', "%$szukane%")
+            ->paginate(200);
+//dd($WynikiWyszukania);
+
+        // wyszukiwanie, jakie zdjęcia z wyszukanych byly już użyte dla tej treści i usunięci ich
+        $zdjeciaMozliweDlaPublikacjiZeZbioru=ObrazkiDodawanie::zdjeciaMozliweDlaPublikacjiZeZbioru($WynikiWyszukania, $request->dzial, $request->tresc_id);
+//dd($zdjeciaMozliweDlaPublikacjiZeZbioru);
+
+
+
+        if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0){
+            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+        }
+        else
+        {
+            $infoSystemowe="Brak zdjęć do dodania!";
+            return view('dodatki.informacjeSystemowe', ['infoSystemowe'=>$infoSystemowe]);
+        }
+
+
+        //$Wyniki->appends(['szukane'=>$szukane]);
+       // $zdjeciaMozliweDlaPublikacjiZeZbioru->appends(['szukane'=>$szukane]);
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dodawanie'=>'tak',
             'dzial'=>$request->dzial,

@@ -63,31 +63,52 @@
                         <select class="form-control" id="kategoria" name="kategoria" aria-label="kategoria" aria-describedby="kategoria1">
                             <option value="wszystkie" >Wszystkie kategorie</option>
                             @if(isset($kategoria))
-                            <option value="Portret" @if($kategoria=='Portret') selected @endif>Portret</option>
-                                <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
+
+                                <option value="1938_powrot" @if($kategoria=='1938_powrot') selected @endif>1938 powrót relikwii</option>
+                                <option value="Gazeta" @if($kategoria=='Gazeta') selected @endif>Gazeta</option>
                                 <option value="Dokument" @if($kategoria=='Dokument') selected @endif>Dokument</option>
-                                <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
-                                <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
-                                <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
-                                <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                                <option value="Ilustracja" @if($kategoria=='Ilustracja') selected @endif>Ilustracja</option>
+                                <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
+                                <option value="Kanonizacja_beatyfikacja" @if($kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                                <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
+                                <option value="Male_obrazki" @if($kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
+                                <option value="Miejsca_kultu" @if($kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>
+                                <option value="Modlitwa" @if($kategoria=='Modlitwa') selected @endif>Modlitwa</option>
                                 <option value="Muzeum" @if($kategoria=='Muzeum') selected @endif>Muzeum</option>
-                                <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczeństwo</option>
+                                <option value="Portret" @if($kategoria=='Portret') selected @endif>Portret/Podobizna</option>
+                                <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
+                                <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                                <option value="Relikwie" @if($kategoria=='Inne') selected @endif>Relikwie</option>
+                                <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
+                                <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
+                                <option value="Zycie_AB" @if($kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>
                                 <option value="Inne" @if($kategoria=='Inne') selected @endif>Inne</option>
+
                             @else
-                                <option value="Portret" >Portret</option>
-                                <option value="Informacja" >Informacja</option>
+                                <option value="1938_powrot" >1938 powrót relikwii</option>
+                                <option value="Gazeta" >Gazeta</option>
                                 <option value="Dokument" >Dokument</option>
-                                <option value="Publikacja" >Publikacja</option>
-                                <option value="Wydarzenie" >Wydarzenie</option>
-                                <option value="Strachocina" >Strachocina</option>
-                                <option value="Rakowiecka" >Rakowiecka</option>
-                                <option value="Muzeum" >Muzeum</option>
+                                <option value="Ilustracje" >Ilustracja</option>
+                                <option value="Informacja" >Informacja</option>
+                                <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
                                 <option value="Meczenstwo" >Męczeństwo</option>
+                                <option value="Male_obrazki" >Małe obrazki</option>
+                                <option value="Miejsca_kultu" >Miejsca kultu</option>
+                                <option value="Modlitwa" >Modlitwa</option>
+                                <option value="Muzeum" >Muzeum</option>
+                                <option value="Portret" selected>Portret/Podobizna</option>
+                                <option value="Publikacja" >Publikacja</option>
+                                <option value="Rakowiecka" >Rakowiecka</option>
+                                <option value="Relikwie" >Relikwie</option>
+                                <option value="Strachocina" >Strachocina</option>
+                                <option value="Wydarzenie" >Wydarzenie</option>
+                                <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
                                 <option value="Inne" >Inne</option>
                             @endif
                         </select>
                     </div>
             </div>
+
             <div class="col-6">
                 <button type="submit" class="btn btn-primary">Wybierz kategorie zdjęcia</button>
                 </form>
@@ -113,26 +134,45 @@
                         <select class="form-control" id="kategoria" name="kategoria" aria-label="kategoria" aria-describedby="kategoria1">
                             <option value="wszystkie" >Wszystkie kategorie</option>
                             @if(isset($kategoria))
-                                <option value="Portret" @if($kategoria=='Portret') selected @endif>Portret</option>
-                                <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
+                                <option value="1938_powrot" @if($kategoria=='1938_powrot') selected @endif>1938 powrót relikwii</option>
+                                <option value="Gazeta" @if($kategoria=='Gazeta') selected @endif>Gazeta</option>
                                 <option value="Dokument" @if($kategoria=='Dokument') selected @endif>Dokument</option>
-                                <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
-                                <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
-                                <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
-                                <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                                <option value="Ilustracja" @if($kategoria=='Ilustracja') selected @endif>Ilustracja</option>
+                                <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
+                                <option value="Kanonizacja_beatyfikacja" @if($kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                                <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
+                                <option value="Male_obrazki" @if($kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
+                                <option value="Miejsca_kultu" @if($kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>
+                                <option value="Modlitwa" @if($kategoria=='Modlitwa') selected @endif>Modlitwa</option>
                                 <option value="Muzeum" @if($kategoria=='Muzeum') selected @endif>Muzeum</option>
-                                <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczeństwo</option>
+                                <option value="Portret" @if($kategoria=='Portret') selected @endif>Portret/Podobizna</option>
+                                <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
+                                <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
+                                <option value="Relikwie" @if($kategoria=='Inne') selected @endif>Relikwie</option>
+                                <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
+                                <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
+                                <option value="Zycie_AB" @if($kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>
                                 <option value="Inne" @if($kategoria=='Inne') selected @endif>Inne</option>
+
                             @else
-                                <option value="Portret" >Portret</option>
-                                <option value="Informacja" >Informacja</option>
+                                <option value="1938_powrot" >1938 powrót relikwii</option>
+                                <option value="Gazeta" >Gazeta</option>
                                 <option value="Dokument" >Dokument</option>
-                                <option value="Publikacja" >Publikacja</option>
-                                <option value="Wydarzenie" >Wydarzenie</option>
-                                <option value="Strachocina" >Strachocina</option>
-                                <option value="Rakowiecka" >Rakowiecka</option>
-                                <option value="Muzeum" >Muzeum</option>
+                                <option value="Ilustracje" >Ilustracja</option>
+                                <option value="Informacja" >Informacja</option>
+                                <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
                                 <option value="Meczenstwo" >Męczeństwo</option>
+                                <option value="Male_obrazki" >Małe obrazki</option>
+                                <option value="Miejsca_kultu" >Miejsca kultu</option>
+                                <option value="Modlitwa" >Modlitwa</option>
+                                <option value="Muzeum" >Muzeum</option>
+                                <option value="Portret" selected>Portret/Podobizna</option>
+                                <option value="Publikacja" >Publikacja</option>
+                                <option value="Rakowiecka" >Rakowiecka</option>
+                                <option value="Relikwie" >Relikwie</option>
+                                <option value="Strachocina" >Strachocina</option>
+                                <option value="Wydarzenie" >Wydarzenie</option>
+                                <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
                                 <option value="Inne" >Inne</option>
                             @endif
                         </select>
@@ -177,10 +217,14 @@
                @endif
            </div>
             <div class="col-3 size20">
-                 {{$zdjecie->opis  }} (<b>{{$zdjecie->kategoria}}</b>)</br>
+                 {{--{{$zdjecie->opis  }} (<b>{{$zdjecie->kategoria}}</b>)</br>--}}
+                 {{$zdjecie->opis  }} (<b>{{\App\Services\ObrazkiDodawanie::ludzkaKategoria($zdjecie->kategoria)}}</b>)</br>
+
+
             @if($zdjecie->duze=='tak')
                 <span class="badge bg-danger text-white">Również duże!</span>
                 @endif
+                <div><b>Autor:</b> {{$zdjecie->autor}}</div>
             </div>
             <div class=" col-4 size20">
                 @php

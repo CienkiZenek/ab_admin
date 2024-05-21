@@ -29,7 +29,14 @@
     <div class="list-group row mt3">
     @foreach($Wyniki as $film)
 
-           <div class="col-8 size20"> <a href="{{ route('filmEdycja', $film->id) }}" class="list-group-item list-group-item-action">{{$film->tytul  }}
+           <div class="col-12"> <a href="{{ route('filmEdycja', $film->id) }}" class="list-group-item list-group-item-action">{{$film->tytul  }}
+
+
+                   @if($film->watki->count()>0)
+                       <i class="bi bi-diagram-2-fill fs-3" style="color: #fd7e14" title="Połączony z wątkiem"></i>
+                   @endif
+
+
                    @if($film->title=='' || $film->keywords=='' || $film->description=='')
                        <span style="color: red; font-weight: bold"> SEO!!! </span>
                    @endif</a>
