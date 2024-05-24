@@ -30,7 +30,8 @@
                             <option value="Portret" @if($zdjecie->kategoria=='Portret') selected @endif>Portret/Podobizna</option>
                             <option value="Publikacja" @if($zdjecie->kategoria=='Publikacja') selected @endif>Publikacja</option>
                             <option value="Rakowiecka" @if($zdjecie->kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
-                            <option value="Relikwie" @if($zdjecie->kategoria=='Inne') selected @endif>Relikwie</option>
+                            <option value="Relikwie" @if($zdjecie->kategoria=='Relikwie') selected @endif>Relikwie</option>
+                            <option value="Ryciny" @if($zdjecie->kategoria=='Ryciny') selected @endif>Ryciny/Czarno-białe</option>
                             <option value="Strachocina" @if($zdjecie->kategoria=='Strachocina') selected @endif>Strachocina</option>
                             <option value="Wydarzenie" @if($zdjecie->kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
                             <option value="Zycie_AB" @if($zdjecie->kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>

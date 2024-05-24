@@ -33,6 +33,7 @@
                         <option value="Publikacja" >Publikacja</option>
                         <option value="Rakowiecka" >Rakowiecka</option>
                         <option value="Relikwie" >Relikwie</option>
+                        <option value="Ryciny" >Ryciny/Czarno-białe</option>
                         <option value="Strachocina" >Strachocina</option>
                         <option value="Wydarzenie" >Wydarzenie</option>
                         <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
@@ -56,6 +57,7 @@ kategorie:
                          Publikacja
                          Rakowiecka
                          Relikwie
+                         Ryciny
                          Strachocina
                          Wydarzenie
                          Zycie_AB

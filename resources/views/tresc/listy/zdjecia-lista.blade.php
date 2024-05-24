@@ -79,6 +79,7 @@
                                 <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
                                 <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
                                 <option value="Relikwie" @if($kategoria=='Inne') selected @endif>Relikwie</option>
+                                <option value="Ryciny" @if($kategoria=='Ryciny') selected @endif>Ryciny/Czarno-białe</option>
                                 <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
                                 <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
                                 <option value="Zycie_AB" @if($kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>
@@ -100,6 +101,7 @@
                                 <option value="Publikacja" >Publikacja</option>
                                 <option value="Rakowiecka" >Rakowiecka</option>
                                 <option value="Relikwie" >Relikwie</option>
+                                <option value="Ryciny" >Ryciny/Czarno-białe</option>
                                 <option value="Strachocina" >Strachocina</option>
                                 <option value="Wydarzenie" >Wydarzenie</option>
                                 <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
@@ -149,6 +151,7 @@
                                 <option value="Publikacja" @if($kategoria=='Publikacja') selected @endif>Publikacja</option>
                                 <option value="Rakowiecka" @if($kategoria=='Rakowiecka') selected @endif>Rakowiecka</option>
                                 <option value="Relikwie" @if($kategoria=='Inne') selected @endif>Relikwie</option>
+                                <option value="Ryciny" @if($kategoria=='Ryciny') selected @endif>Ryciny/Czarno-białe</option>
                                 <option value="Strachocina" @if($kategoria=='Strachocina') selected @endif>Strachocina</option>
                                 <option value="Wydarzenie" @if($kategoria=='Wydarzenie') selected @endif>Wydarzenie</option>
                                 <option value="Zycie_AB" @if($kategoria=='Zycie_AB') selected @endif>Życie Andrzeja Boboli</option>
@@ -170,6 +173,7 @@
                                 <option value="Publikacja" >Publikacja</option>
                                 <option value="Rakowiecka" >Rakowiecka</option>
                                 <option value="Relikwie" >Relikwie</option>
+                                <option value="Ryciny" >Ryciny/Czarno-białe</option>
                                 <option value="Strachocina" >Strachocina</option>
                                 <option value="Wydarzenie" >Wydarzenie</option>
                                 <option value="Zycie_AB" >Życie Andrzeja Boboli</option>
