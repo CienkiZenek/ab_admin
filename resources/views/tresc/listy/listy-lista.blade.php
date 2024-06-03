@@ -37,7 +37,7 @@
                            <i class="bi bi-arrow-90deg-right fs-4 " style="color: red" title="Nowy"></i>
                        @endif
 
-                   {{Str::limit($list->tresc, 40)  }} </a>
+                   {{Str::limit($list->tresc, 90)  }} </a>
 
 
            </div>

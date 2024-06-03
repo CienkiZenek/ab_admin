@@ -40,7 +40,7 @@
 
 
             @if($dlugosc1>3)
-                <a href="{{URL::asset('zdjecia/'.$tresc->zdjecie1)}}" data-lightbox="obrazek1" data-title=""><img src="{{URL::asset('zdjecia/'.$tresc->zdjecie1)}}" class="img-thumbnail" alt=""/></a>
+                <a href="{{URL::asset('zdjecia/'.$tresc->zdjecie1)}}" data-lightbox="obrazek1" data-title=""><img src="{{URL::asset('zdjecia/'.$tresc->zdjecie1)}}"  style="max-height: 500px" class="img-thumbnail" alt=""/></a>
 
             @endif
 
@@ -105,7 +105,7 @@
 
 
             @if($dlugosc2>3)
-                <a href="{{URL::asset('zdjecia/'.$tresc->zdjecie2)}}" data-lightbox="obrazek2" data-title=""><img src="{{URL::asset('zdjecia/'.$tresc->zdjecie2)}}" class="img-thumbnail" alt=""/></a>
+                <a href="{{URL::asset('zdjecia/'.$tresc->zdjecie2)}}" data-lightbox="obrazek2" data-title=""><img src="{{URL::asset('zdjecia/'.$tresc->zdjecie2)}}" style="max-height: 500px" class="img-thumbnail" alt=""/></a>
 
             @endif
 

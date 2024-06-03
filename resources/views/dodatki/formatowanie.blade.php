@@ -14,6 +14,7 @@
                 <div>{{'<b>'}}<b>bold</b>{{'</b>'}} (początek/koniec)</div>
                 <div>{{'<i>'}}<i>italic</i>{{'</i>'}} (początek/koniec)</div>
                 <div>{{'<u>'}}<u>podkreślenie</u>{{'</u>'}} (początek/koniec)</div>
+                <div>{{'<a href=""> </a>'}}</div>
             </div>
         </div>
     </div>

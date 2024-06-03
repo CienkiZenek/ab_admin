@@ -107,7 +107,7 @@ class ZdjeciaController extends Controller
 // wyszukiwanie, jakie zdjęcia z wyszukanych byly już użyte dla tej treści i usunięci ich
             $zdjeciaMozliweDlaPublikacjiZeZbioru=ObrazkiDodawanie::zdjeciaMozliweDlaPublikacjiZeZbioru($WynikiWyszukania, $request->dzial, $request->tresc_id);
             if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0) {
-                $Wyniki = $zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+                $Wyniki = $zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->orderBy('created_at', 'desc')->paginate(200);
             }
             else
             {
@@ -137,7 +137,7 @@ class ZdjeciaController extends Controller
             $zdjeciaMozliweDlaPublikacjiZeZbioru=ObrazkiDodawanie::zdjeciaMozliweDlaPublikacjiZeZbioru($WynikiWyszukania, $request->dzial, $request->tresc_id);
 
             if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0){
-            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->orderBy('created_at', 'desc')->paginate(200);
             }
             else
             {
@@ -317,11 +317,12 @@ class ZdjeciaController extends Controller
  $zdjeciaWszystkie=Zdjecia::all();
         $Wyniki=$zdjeciaWszystkie->diff($zdjeciaPublikacji);*/
 
-        $Wyniki= ObrazkiDodawanie::zdjeciaMozliweDlaPublikacji($dzial,$tresc_id);
-        if($Wyniki->isNotEmpty()){
-        $Wyniki=$Wyniki->toQuery()->paginate(200);
+        $Wyniki= ObrazkiDodawanie::zdjeciaMozliweDlaPublikacji($dzial,$tresc_id)->sortByDesc('created_at');
 
-        return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
+        if($Wyniki->isNotEmpty()){
+        $Wyniki=$Wyniki->toQuery()->orderBy('created_at', 'desc')->paginate(200);
+           // dd($Wyniki);
+            return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dzial'=>$dzial,
             'tresc_id'=>$tresc_id,
             'rodzaj'=>$rodzaj,
@@ -487,7 +488,8 @@ switch ($request->dzial)
             ->orWhere('plik', 'like', "%$szukane%")
             ->orWhere('plik_duze', 'like', "%$szukane%")
             ->orWhere('kategoria', 'like', "%$szukane%")
-            ->paginate(100);
+            ->orderBy('created_at', 'desc')
+            ->paginate(200);
         $Wyniki->appends(['szukane'=>$szukane]);
         return view('tresc.listy.zdjecia-lista', ['Wyniki'=>$Wyniki,
             'dodawanie'=>'nie'
@@ -512,7 +514,7 @@ switch ($request->dzial)
 
 
         if($zdjeciaMozliweDlaPublikacjiZeZbioru->count()>0){
-            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->paginate(200);
+            $Wyniki=$zdjeciaMozliweDlaPublikacjiZeZbioru->toQuery()->orderBy('created_at', 'desc')->paginate(200);
         }
         else
         {

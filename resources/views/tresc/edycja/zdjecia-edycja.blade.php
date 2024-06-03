@@ -22,6 +22,7 @@
                             <option value="Ilustracja" @if($zdjecie->kategoria=='Ilustracja') selected @endif>Ilustracja</option>
                             <option value="Informacja" @if($zdjecie->kategoria=='Informacja') selected @endif>Informacja</option>
                             <option value="Kanonizacja_beatyfikacja" @if($zdjecie->kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                            <option value="Kanonizacja_beatyfikacja" @if($zdjecie->kategoria=='Karuzela') selected @endif>Karuzela</option>
                             <option value="Meczenstwo" @if($zdjecie->kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
                             <option value="Male_obrazki" @if($zdjecie->kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
                             <option value="Miejsca_kultu" @if($zdjecie->kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>

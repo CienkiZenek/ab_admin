@@ -182,7 +182,7 @@ return $powiazania;
         $zdjeciaPublikacji=$tresc->zdjecia()->get();
        // $Wyniki=$zdjeciaWszystkie->diff($zdjeciaPublikacji);
 
-        //dd($zdjeciaPublikacji);
+       // dd($zdjeciaWszystkie);
 
        // dd($zdjeciaWszystkie->diff($zdjeciaPublikacji));
 

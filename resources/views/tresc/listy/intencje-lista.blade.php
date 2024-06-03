@@ -37,7 +37,7 @@
                            <i class="bi bi-arrow-90deg-right fs-4" style="color: red" title="Nowa"></i>
                        @endif
 
-                   {{Str::limit($intencja->tresc_nadeslana, 40)  }} </a>
+                   {{Str::limit($intencja->tresc_nadeslana, 90)  }} </a>
 
 
            </div>

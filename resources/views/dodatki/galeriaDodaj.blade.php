@@ -23,7 +23,7 @@
 
     @foreach($tresc->galeria as $zdjecie)
             <div class="col-3">
-                <a href="{{URL::asset('zdjecia/'.$zdjecie->plik)}}" data-lightbox="galeria" data-title=""><img src="{{URL::asset('zdjecia/'.$zdjecie->plik)}}" class="img-thumbnail" alt=""/></a>
+                <a href="{{URL::asset('zdjecia/'.$zdjecie->plik)}}" data-lightbox="galeria" data-title=""><img src="{{URL::asset('zdjecia/'.$zdjecie->plik)}}"  style="max-height: 500px" class="img-thumbnail" alt=""/></a>
                 <form action="{{route('zdjecieDodaj')}}" method="POST">
                     @csrf
                     <input type="hidden" name="dzial" value="{{$dzial}}"/>

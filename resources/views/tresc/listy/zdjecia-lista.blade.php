@@ -70,6 +70,7 @@
                                 <option value="Ilustracja" @if($kategoria=='Ilustracja') selected @endif>Ilustracja</option>
                                 <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
                                 <option value="Kanonizacja_beatyfikacja" @if($kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                                <option value="Karuzela" @if($kategoria=='Karuzela') selected @endif>Karuzela</option>
                                 <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
                                 <option value="Male_obrazki" @if($kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
                                 <option value="Miejsca_kultu" @if($kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>
@@ -92,6 +93,7 @@
                                 <option value="Ilustracje" >Ilustracja</option>
                                 <option value="Informacja" >Informacja</option>
                                 <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
+                                <option value="Karuzela" >Karuzela</option>
                                 <option value="Meczenstwo" >Męczeństwo</option>
                                 <option value="Male_obrazki" >Małe obrazki</option>
                                 <option value="Miejsca_kultu" >Miejsca kultu</option>
@@ -142,6 +144,7 @@
                                 <option value="Ilustracja" @if($kategoria=='Ilustracja') selected @endif>Ilustracja</option>
                                 <option value="Informacja" @if($kategoria=='Informacja') selected @endif>Informacja</option>
                                 <option value="Kanonizacja_beatyfikacja" @if($kategoria=='Kanonizacja_beatyfikacja') selected @endif>Kanonizacja - beatyfikacja</option>
+                                <option value="Karuzela" @if($kategoria=='Karuzela') selected @endif>Karuzela</option>
                                 <option value="Meczenstwo" @if($kategoria=='Meczenstwo') selected @endif>Męczenstwo</option>
                                 <option value="Male_obrazki" @if($kategoria=='Male_obrazki') selected @endif>Małe obrazki</option>
                                 <option value="Miejsca_kultu" @if($kategoria=='Miejsca_kultu') selected @endif>Miejsca kultu</option>
@@ -164,6 +167,7 @@
                                 <option value="Ilustracje" >Ilustracja</option>
                                 <option value="Informacja" >Informacja</option>
                                 <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
+                                <option value="Karuzela" >Karuzela</option>
                                 <option value="Meczenstwo" >Męczeństwo</option>
                                 <option value="Male_obrazki" >Małe obrazki</option>
                                 <option value="Miejsca_kultu" >Miejsca kultu</option>
