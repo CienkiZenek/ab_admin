@@ -13,7 +13,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Data:</span>
                     </div>
-                    <input type="text" class="form-control{{ $errors->has('data') ? ' is-invalid' : ' ' }}" name="data" id="data" readonly  value="{{$kalendarium->data}}" >
+                    <input type="text" class="form-control{{ $errors->has('data') ? ' is-invalid' : ' ' }}" name="data" id="data" value="{{$kalendarium->data}}" >
                 </div>
 
             </div>
