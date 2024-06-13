@@ -112,6 +112,9 @@
     </a>
    {{-- @include('dodatki.obrazekiJedenDodaj', ['dzial'=>'Modlitwy', 'tresc'=>$modlitwa])--}}
     @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Modlitwy', 'tresc'=>$modlitwa])
+    @if($modlitwa->strona_glowna=='tak')
+        @include('dodatki.obrazekKaruzelaDodaj', ['dzial'=>'Modlitwy','tresc'=>$modlitwa])
+    @endif
     {{--Dodaj plik--}}
     @include('dodatki.plikDodaj', ['dzial'=>'Modlitwy', 'tresc'=>$modlitwa])
     {{--Połącz z wątkiem--}}

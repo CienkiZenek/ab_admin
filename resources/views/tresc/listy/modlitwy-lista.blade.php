@@ -34,7 +34,7 @@
                    @if(Str::length($modlitwa->zdjecie1)>4)
                        <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
                    @endif
-                   @if($modlitwa->strona_glowna=='tak')
+                   @if($modlitwa->strona_glowna=='tak' && Str::length($modlitwa->zdjecie_karuzela)>4)
                        <i class="bi bi-window-split fs-4 " style="color: red" title="Na stronie głównej"></i>
                    @endif
 
