@@ -173,10 +173,23 @@ class ZdjeciaController extends Controller
       $data = $this->validator($request->all());
         //$data=$request->all();
        // dd($request->all());
-            $path = $request->file('plik')->storeAs(
+
+        $miejsce='zdjecia';
+
+        if($request->kategoria='karuzela')
+        {
+            $miejsce='karuzela';
+        }
+        //dd($miejsce);
+           /* $path = $request->file('plik')->storeAs(
                 'zdjecia', $request->file('plik')->getClientOriginalName()
-            );
-            $data['plik']=$request->file('plik')->getClientOriginalName();
+            );*/
+        $path = $request->file('plik')->storeAs(
+            $miejsce, $request->file('plik')->getClientOriginalName()
+        );
+
+
+        $data['plik']=$request->file('plik')->getClientOriginalName();
            /* $data['plik']=$path;*/
 
         Zdjecia::create($data);

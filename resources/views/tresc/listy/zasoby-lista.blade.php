@@ -31,11 +31,11 @@
 
            <div class="col-12"> <a href="{{ route('zasobEdycja', $zasob->id) }}" class="list-group-item list-group-item-action">{{$zasob->nazwa}}
 
-                   <span class="text-success" title="Rodzaj">{{$zasob->rodzaj}}</span>
+                   <span class="text-success" title="Rodzaj">({{$zasob->rodzaj}}) </span>
                    @if(Str::length($zasob->zdjecie1)>4)
                        <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
                    @endif
-                   @if($zasob->strona_glowna=='tak')
+                   @if($zasob->strona_glowna=='tak' && Str::length($zasob->zdjecie_karuzela)>4)
                        <i class="bi bi-window-split fs-4 " style="color: red" title="Na stronie głównej"></i>
                    @endif
 

@@ -172,7 +172,9 @@
 
 </div>
 </div>
-
+        @if($artykul->galeria->count()>0)
+            @include('dodatki.nazwaGalerii', ['tresc'=>$artykul])
+        @endif
         @include('dodatki.seo', ['tresc'=>$artykul])
 
         @if(Str::length($artykul->zdjecie1)>4 || Str::length($artykul->zdjecie2)>4)
@@ -210,6 +212,10 @@
     <div class="mt-3"></div>
     {{-- Dodaj obrazki--}}
    @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Artykuly', 'tresc'=>$artykul])
+    {{-- Obrazek karuzeli dodawanie--}}
+    @if($artykul->strona_glowna=='tak')
+        @include('dodatki.obrazekKaruzelaDodaj', ['dzial'=>'Artykuly','tresc'=>$artykul])
+    @endif
     {{-- Dodaj galerie--}}
     @include('dodatki.galeriaDodaj', ['dzial'=>'Artykuly', 'tresc'=>$artykul])
     {{--Połącz z wątkiem--}}

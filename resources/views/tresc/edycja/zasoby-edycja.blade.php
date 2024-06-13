@@ -80,6 +80,9 @@
 
             </div>
         </div>
+        @if($zasob->galeria->count()>0)
+        @include('dodatki.nazwaGalerii', ['tresc'=>$zasob])
+        @endif
         {{--Formatowanie wyświetlanego tesktu--}}
         @include('dodatki.formatowanie')
 
@@ -88,6 +91,10 @@
         @if(Str::length($zasob->zdjecie1)>4 || Str::length($zasob->zdjecie2)>4)
             @include('dodatki.podpisyObrazki', ['tresc'=>$zasob])
         @endif
+
+
+
+
         <div class="row mt-5">
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Zapisz</button>
@@ -100,6 +107,10 @@
     <div class="mt-4"></div>
     {{-- Dodaj obrazki--}}
     @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Zasoby', 'tresc'=>$zasob])
+    {{-- Obrazek karuzeli dodawanie--}}
+    @if($zasob->strona_glowna=='tak')
+        @include('dodatki.obrazekKaruzelaDodaj', ['dzial'=>'Zasoby','tresc'=>$zasob])
+    @endif
     {{-- Dodaj galerie--}}
     @include('dodatki.galeriaDodaj', ['dzial'=>'Zasoby', 'tresc'=>$zasob])
     {{--Dodaj plik--}}

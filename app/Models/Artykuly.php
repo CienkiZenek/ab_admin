@@ -11,7 +11,7 @@ class Artykuly extends Model
 {
     use HasFactory;
     protected $table = 'artykuly';
-    protected $fillable =['tytul', 'rodzaj', 'naglowek', 'motto', 'motto_podpis', 'spis_tresci', 'tresc', 'data', 'gatunek', 'autor', 'status', 'strona_glowna', 'zdjecie1', 'zdjecie2',
+    protected $fillable =['tytul', 'rodzaj', 'naglowek', 'motto', 'motto_podpis', 'spis_tresci', 'tresc', 'data', 'gatunek', 'autor', 'status', 'strona_glowna', 'zdjecie_karuzela', 'zdjecie_karuzela_podpis', 'zdjecie_karuzela_id', 'galeria_nazwa', 'zdjecie1', 'zdjecie2',
         'zdjecie1_podpis', 'zdjecie2_podpis', 'zdjecie1_id', 'zdjecie2_id', 'ramka1', 'ramka2', 'komentarz', 'cytat1', 'cytat2', 'cytat3', 'cytat4',   'title', 'keywords', 'description'];
 
 

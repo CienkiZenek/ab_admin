@@ -258,7 +258,9 @@
         </div>
     </div>
 </div>
-
+        @if($wiadomosc->galeria->count()>0)
+            @include('dodatki.nazwaGalerii', ['tresc'=>$wiadomosc])
+        @endif
         @include('dodatki.seo', ['tresc'=>$wiadomosc])
 
         @if(Str::length($wiadomosc->zdjecie1)>4 || Str::length($wiadomosc->zdjecie2)>4)
@@ -293,6 +295,10 @@
     <div class="mt-3"></div>
     {{-- Dodaj obrazki--}}
    @include('dodatki.obrazekiDwaDodaj', ['dzial'=>'Wiadomosci', 'tresc'=>$wiadomosc])
+    {{-- Obrazek karuzeli dodawanie--}}
+    @if($wiadomosc->strona_glowna=='tak')
+        @include('dodatki.obrazekKaruzelaDodaj', ['dzial'=>'Wiadomosci','tresc'=>$wiadomosc])
+    @endif
     {{-- Dodaj galerie--}}
     @include('dodatki.galeriaDodaj', ['dzial'=>'Wiadomosci', 'tresc'=>$wiadomosc])
     {{--Połącz z wątkiem--}}

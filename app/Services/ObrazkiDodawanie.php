@@ -22,6 +22,7 @@ class ObrazkiDodawanie {
         switch ($tryb) {
 
             case 'dodawanie':
+               // dd($rodzaj);
         $tresc->zdjecia()->attach($zdjecie_id, ['rodzaj' => $rodzaj]);
 
         switch ($rodzaj) {
@@ -33,6 +34,11 @@ class ObrazkiDodawanie {
             case 'Zdjecie2':
                 $tresc->zdjecie2 = $plikZdjecia;
                 $tresc->zdjecie2_id = $zdjecie_id;
+                $tresc->save();
+                break;
+            case 'Karuzela':
+                $tresc->zdjecie_karuzela = $plikZdjecia;
+                $tresc->zdjecie_karuzela_id = $zdjecie_id;
                 $tresc->save();
                 break;
             default:
@@ -54,6 +60,11 @@ break;
                     case 'Zdjecie2':
                         $tresc->zdjecie2 = '';
                         $tresc->zdjecie2_id = null;
+                        $tresc->save();
+                        break;
+                    case 'Karuzela':
+                        $tresc->zdjecie_karuzela = '';
+                        $tresc->zdjecie_karuzela_id = null;
                         $tresc->save();
                         break;
                 }
@@ -256,6 +267,9 @@ return $powiazania;
                 break;
             case 'Kanonizacja_beatyfikacja':
                 $kategoria = 'Kanonizacja - beatyfikacja';
+                break;
+            case 'Karuzela':
+                $kategoria = 'Karuzela';
                 break;
             case 'Meczenstwo':
                 $kategoria = 'Męczeństwo';

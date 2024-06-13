@@ -24,6 +24,10 @@ return new class extends Migration
             $table->text('zrodlo')->nullable();
             $table->enum('status', ['Robocza', 'Opublikowana', 'Zawieszona', 'Archiwum'])->default('Robocza');
             $table->enum('strona_glowna', ['tak', 'nie'])->default('nie'); // Do  slidera
+            $table->tinyText('zdjecie_karuzela')->nullable();
+            $table->text('zdjecie_karuzela_podpis')->nullable();
+            $table->bigInteger('zdjecie_karuzela_id')->nullable();
+            $table->text('galeria_nazwa')->nullable();
             $table->enum('przyklejona', ['tak', 'nie'])->default('nie');
             $table->text('link_tresc')->nullable();
             $table->text('link_url')->nullable();

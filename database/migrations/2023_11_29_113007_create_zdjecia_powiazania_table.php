@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('powiaz_type', 30); // nazwa klasy powiązywanej
             $table->smallInteger('zdjecia_id'); // id zdjęcia
             $table->smallInteger('powiaz_id'); // (nazwa musi się zgadazać z "nazwa_type" -> zdefinowana w modelu nazwa!!) id powiązania - id wiadomości, artykułu, biografi itp...
-            $table->enum('rodzaj', ['Zdjecie1', 'Zdjecie2', 'Galeria'])->default('Zdjecie1');
+            $table->enum('rodzaj', ['Zdjecie1', 'Zdjecie2', 'Galeria', 'Karuzela'])->default('Zdjecie1');
             $table->unique(['powiaz_type','zdjecia_id','powiaz_id']);
             $table->timestamps();
         });

@@ -21,6 +21,12 @@ return new class extends Migration
             $table->string('gatunek', 10)->default('modlitwa'); //gatunek/rodaj tresci - artykuł, wiadomośąc, zasoby, film, modlitwa itp.
             $table->string('widok',40)->nullable();
             $table->enum('strona_glowna', ['tak', 'nie'])->default('nie'); //karuzela; slider
+
+            $table->tinyText('zdjecie_karuzela')->nullable();
+            $table->text('zdjecie_karuzela_podpis')->nullable();
+            $table->bigInteger('zdjecie_karuzela_id')->nullable();
+
+
             $table->text('zrodlo_nazwa')->nullable();
             $table->text('zrodlo_link')->nullable();
             $table->enum('link_nofollow', ['tak', 'nie'])->default('nie');

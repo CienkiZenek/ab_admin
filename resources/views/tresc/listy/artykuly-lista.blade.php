@@ -49,7 +49,7 @@
                        @if(Str::length($artykul->zdjecie1)>4)
                            <i class="bi bi-image fs-4" style="color: forestgreen" title="Zdjęcie1"></i>
                        @endif
-                   @if($artykul->strona_glowna=='tak')
+                   @if($artykul->strona_glowna=='tak' && Str::length($artykul->zdjecie_karuzela)>4)
                    <i class="bi bi-window-split fs-4 " style="color: red" title="Na stronie głównej"></i>
                    @endif
 

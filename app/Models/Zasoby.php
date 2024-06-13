@@ -11,7 +11,7 @@ class Zasoby extends Model
 {
     use HasFactory;
     protected $table = 'zasoby';
-    protected $fillable =['nazwa', 'opis', 'tresc', 'rodzaj', 'zdjecie1', 'zdjecie2', 'strona_glowna',
+    protected $fillable =['nazwa', 'opis', 'tresc', 'rodzaj', 'zdjecie1', 'zdjecie2', 'strona_glowna', 'zdjecie_karuzela', 'zdjecie_karuzela_podpis', 'zdjecie_karuzela_id', 'galeria_nazwa',
         'zdjecie1_podpis', 'zdjecie2_podpis', 'zdjecie1_id', 'zdjecie2_id','title', 'keywords', 'description'];
 
     public function setNazwaAttribute($value){

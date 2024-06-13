@@ -25,6 +25,12 @@ return new class extends Migration
             $table->string('gatunek')->default('artykul'); //gatunek/rodaj tresci - artykuł, wiadomośąc, zasoby, film, modlitwa itp.
             $table->enum('status', ['Roboczy', 'Opublikowany'])->default('Roboczy');
             $table->enum('strona_glowna', ['tak', 'nie'])->default('nie'); // Do slidera na stronie głównej
+
+            $table->tinyText('zdjecie_karuzela')->nullable();
+            $table->text('zdjecie_karuzela_podpis')->nullable();
+            $table->bigInteger('zdjecie_karuzela_id')->nullable();
+            $table->text('galeria_nazwa')->nullable();
+
             $table->tinyText('zdjecie1')->nullable();
             $table->tinyText('zdjecie2')->nullable();
             $table->text('zdjecie1_podpis')->nullable();

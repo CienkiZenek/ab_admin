@@ -208,10 +208,22 @@
 
             <div class="row mt-3  border-bottom border-2" >
            <div class="col-3 fs-6">
-               <a href="zdjecia/{{$zdjecie->plik}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
+
+               @if($zdjecie->kategoria=='Karuzela')
+                   <a href="karuzela/{{$zdjecie->plik}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
+                       <img src="karuzela/{{$zdjecie->plik}}"  class="img-thumbnail" alt="{{$zdjecie->opis}}" style="max-height: 200px"></a>
+
+
+
+               @else
+                   <a href="zdjecia/{{$zdjecie->plik}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
+                       <img src="zdjecia/{{$zdjecie->plik}}"  class="img-thumbnail" alt="{{$zdjecie->opis}}" style="max-height: 200px"></a>
+
+               @endif
+{{-- <a href="zdjecia/{{$zdjecie->plik}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
                    <img src="zdjecia/{{$zdjecie->plik}}"  class="img-thumbnail" alt="{{$zdjecie->opis}}" style="max-height: 200px"></a>
 
-
+--}}
 
                @if($dodawanie=='nie')
                <form action="{{route('zdjecieEdycja', $zdjecie->id)}}" method="POST">

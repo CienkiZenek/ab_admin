@@ -24,7 +24,7 @@
                         <option value="Ilustracje" >Ilustracja</option>
                         <option value="Informacja" >Informacja</option>
                         <option value="Kanonizacja_beatyfikacja" >Kanonizacja - beatyfikacja</option>
-                        <option value="Kanonizacja_beatyfikacja" >Karuzela</option>
+                        <option value="Karuzela" >Karuzela</option>
                         <option value="Meczenstwo" >Męczeństwo</option>
                         <option value="Male_obrazki" >Małe obrazki</option>
                         <option value="Miejsca_kultu" >Miejsca kultu</option>
