@@ -73,8 +73,21 @@
             <div class="col-12 mt-3">
 
                 <div class="col-7">
+
+                    @if($zdjecie->kategoria=='Karuzela')
+
+                        <a href="{{ URL::asset('karuzela/'.$zdjecie->plik)}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
+                            <img src="{{ URL::asset('karuzela/'.$zdjecie->plik)}}"  class="img-thumbnail" alt="{{$zdjecie->opis}}" style="max-height: 200px"></a>
+
+
+
+                    @else
+
                 <a href="{{ URL::asset('zdjecia/'.$zdjecie->plik)}}" data-lightbox="obrazek{{$zdjecie->id}}" data-title="">
                     <img src="{{ URL::asset('zdjecia/'.$zdjecie->plik)}}"  class="img-thumbnail" alt="{{$zdjecie->opis}}" style="max-height: 200px"></a>
+
+                        @endif
+
                 </div>
                     <div class="col-5">
                         <div class="form-label">Plik zdjęcia:</div>
@@ -107,6 +120,10 @@
         </div>
     </form>
 
+
+    @if($zdjecie->kategoria=='Karuzela')
+
+    @else
 <div class="mt-4 mb-3">Duża wersja zdjęcia:</div>
 
 
@@ -158,7 +175,7 @@
         </div>
 
     </form>
-
+    @endif
 
     @if($zdjecie->liczbaDodan==0 )
     <button class="btn btn-danger mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#usuwanie" aria-expanded="false" aria-controls="usuwanie">

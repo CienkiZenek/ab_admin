@@ -238,13 +238,20 @@
            </div>
             <div class="col-3 size20">
                  {{--{{$zdjecie->opis  }} (<b>{{$zdjecie->kategoria}}</b>)</br>--}}
-                 {{$zdjecie->opis  }} (<b>{{\App\Services\ObrazkiDodawanie::ludzkaKategoria($zdjecie->kategoria)}}</b>)</br>
+                @if($zdjecie->kategoria=='Karuzela')
+                    <div><span class="badge bg-danger text-white">Karuzela!</span></div>
+                @else
+                    <div><b>{{\App\Services\ObrazkiDodawanie::ludzkaKategoria($zdjecie->kategoria)}}.</b></div>
+                @endif
+                 {{$zdjecie->opis  }} </br>
 
 
             @if($zdjecie->duze=='tak')
                 <span class="badge bg-danger text-white">Również duże!</span>
                 @endif
-                <div><b>Autor:</b> {{$zdjecie->autor}}</div>
+
+
+                <div><b>Autor/Źródło:</b> {{$zdjecie->autor}}</div>
             </div>
             <div class=" col-4 size20">
                 @php

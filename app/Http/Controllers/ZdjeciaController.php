@@ -174,20 +174,24 @@ class ZdjeciaController extends Controller
         //$data=$request->all();
        // dd($request->all());
 
-        $miejsce='zdjecia';
 
-        if($request->kategoria='karuzela')
+
+        if($request->kategoria=='Karuzela')
         {
-            $miejsce='karuzela';
+            $path = $request->file('plik')->storeAs(
+                'karuzela', $request->file('plik')->getClientOriginalName() );
+
         }
+else {
+
         //dd($miejsce);
            /* $path = $request->file('plik')->storeAs(
                 'zdjecia', $request->file('plik')->getClientOriginalName()
             );*/
         $path = $request->file('plik')->storeAs(
-            $miejsce, $request->file('plik')->getClientOriginalName()
+            'zdjecia', $request->file('plik')->getClientOriginalName()
         );
-
+}
 
         $data['plik']=$request->file('plik')->getClientOriginalName();
            /* $data['plik']=$path;*/
@@ -231,10 +235,22 @@ class ZdjeciaController extends Controller
         if(isset($data['plik'])) {
             // usuwanie starego zdjęcia
 
+            if($zdjecie->kategoria=='Karuzela')
+            {
+                Storage::delete('karuzela/'.$stareZdjecie);
+
+                $path = $request->file('plik')->storeAs(
+                    'karuzela', $request->file('plik')->getClientOriginalName()
+                );
+            }
+            else {
             Storage::delete('zdjecia/'.$stareZdjecie);
+
             $path = $request->file('plik')->storeAs(
                 'zdjecia', $request->file('plik')->getClientOriginalName()
             );
+            }
+
             $data['plik'] = $request->file('plik')->getClientOriginalName();
             /*$data['plik'] = $path;*/
         }
@@ -292,7 +308,14 @@ class ZdjeciaController extends Controller
     public function destroy($id)
     {
         $zdjecie = Zdjecia::findOrFail($id);
+        if($zdjecie->kategoria=='Karuzela')
+        {
+            Storage::delete('karuzela/'.$zdjecie->plik);
+        }
+        else{
+
         Storage::delete('zdjecia/'.$zdjecie->plik);
+        }
         // usuwanie również dużego zdjęcia - gdy jest
         if(Str::length('zdjecia/'.$zdjecie->plik_duze)>4){
             Storage::delete('zdjecia/'.$zdjecie->plik_duze);
