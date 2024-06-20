@@ -41,12 +41,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" >Tytuł:</span>
                     </div>
-                    <input type="text" class="form-control{{ $errors->has('tytul') ? ' is-invalid' : ' ' }}" name="tytul" id="tytul" value="{{$kalendarium->tytul}}" >
+
+                    <textarea class="form-control{{ $errors->has('tytul') ? ' is-invalid' : ' ' }}" name="tytul" id="tytul"
+                              rows="4">{{$kalendarium->tytul}}</textarea>
+                   {{-- <input type="text" class="form-control{{ $errors->has('tytul') ? ' is-invalid' : ' ' }}" name="tytul" id="tytul" value="{{$kalendarium->tytul}}" >
+                --}}
                 </div>
 
             </div>
         </div>
-        <div>{{ '<a href="" class="text-warning"> </a>'   }}</div>
+        <div>{{'<a href="" class="text-warning" rel="canonical"> </a>'   }}</div>
         <div class="row mt-4">
             <div class="col-12">
                 <div class="input-group">
@@ -59,7 +63,6 @@
 
             </div>
         </div>
-
 
         <div class="row mt-4">
             <div class="col-12">

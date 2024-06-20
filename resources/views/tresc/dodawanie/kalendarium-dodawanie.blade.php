@@ -28,7 +28,7 @@
 
                     <select class="form-control{{ $errors->has('status') ? ' is-invalid' : ' ' }}" id="status" name="status" aria-label="status" aria-describedby="status1">
                         <option value="Robocze" >Robocze</option>
-                        <option value="Opublikowane" >Opublikowane</option>
+                        <option value="Opublikowane" selected>Opublikowane</option>
 
 
                     </select>

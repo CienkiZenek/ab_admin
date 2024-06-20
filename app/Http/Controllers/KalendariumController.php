@@ -13,7 +13,7 @@ class KalendariumController extends Controller
     protected function validator($data)
     {
         $walidated = Validator::make($data, [
-             'tytul' => 'required|min:10|unique:kalendarium',
+             'tytul' => 'required|min:10',
             'data' => 'required|date',
              'status' => 'required',
              'naglowek' => 'nullable',
