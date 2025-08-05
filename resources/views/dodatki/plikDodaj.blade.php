@@ -39,7 +39,7 @@
 
 
 
-                        {{Str::limit($plik->opis, 70)}} ({{$plik->rodzaj  }})</div>
+                        {{Str::limit($plik->nazwa, 40)}} ({{Str::limit($plik->opis, 20)}} --> <b>{{$plik->rodzaj  }}</b>)</div>
         <div class="col-3 ">
                         <button class="btn btn-outline-secondary btn-sm" type="submit" id="dodajPlik">Odłącz plik</button>
             </form>

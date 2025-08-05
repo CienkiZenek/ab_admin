@@ -169,7 +169,7 @@
 
     <div class="row mt-3 mb-3 border-3 bg-light p-2 border border-secondary rounded" >
 
-        <div class="col-5 "><span class="badge bg-secondary">Opis pliku</span></div>
+        <div class="col-5 "><span class="badge bg-secondary">Tytuł/Opis pliku</span></div>
         <div class="col-5 "><span class="badge bg-secondary">Użycia</span></div>
 
     </div>
@@ -179,7 +179,7 @@
             <div class="col-5 size20">
 
 
-                {{$plik->opis }} (<b>{{$plik->rodzaj  }}</b>)
+                {{$plik->nazwa }} / {{$plik->opis }} (<b>{{$plik->rodzaj  }}</b>)
                 @if($dodawanie=='nie')
                     <form action="{{route('plikEdycja', $plik->id)}}" method="POST">
                         @csrf
@@ -201,7 +201,7 @@
 
                 @foreach($powiazania as $powiazanie)
                    {{-- @php  dd($powiazanie); @endphp--}}
-                    <p class="m-0"> {{Str::limit($powiazanie->pow_tytul, 40)}} (<i>{{$powiazanie->rodzaj}}</i>, {{$powiazanie->pow_data}}){{----}}</p>
+                    <p class="m-0"> {{Str::limit($powiazanie->pow_tytul, 40)}} ( <i>{{$powiazanie->rodzaj}}</i>, {{$powiazanie->pow_data}}){{----}}</p>
                   @endforeach
 
               </div>

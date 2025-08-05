@@ -11,7 +11,7 @@ class Wiadomosci extends Model
 {
     use HasFactory;
     protected $table = 'wiadomosci';
-    protected $fillable =['tytul', 'rodzaj', 'naglowek', 'tresc', 'data', 'gatunek','autor', 'status', 'strona_glowna', 'zdjecie_karuzela', 'zdjecie_karuzela_podpis', 'zdjecie_karuzela_id', 'galeria_nazwa',  'przyklejona', 'link_tresc', 'link_url', 'zdjecie1', 'zdjecie2',
+    protected $fillable =['tytul', 'rodzaj', 'naglowek', 'tresc', 'data', 'gatunek','autor', 'zrodlo', 'status', 'strona_glowna', 'zdjecie_karuzela', 'zdjecie_karuzela_podpis', 'zdjecie_karuzela_id', 'galeria_nazwa',  'przyklejona', 'link_tresc', 'link_url', 'zdjecie1', 'zdjecie2',
         'zdjecie1_podpis', 'zdjecie2_podpis', 'zdjecie1_id', 'zdjecie2_id', 'ramka1', 'ramka2', 'komentarz', 'film', 'film_podpis', 'cytat1', 'cytat2', 'cytat3', 'cytat4', 'title', 'keywords', 'description'];
 
 
