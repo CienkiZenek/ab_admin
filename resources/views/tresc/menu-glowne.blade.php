@@ -90,7 +90,7 @@
                 <span class="badge bg-warning text-white" title="Wszystkie">{{\App\Models\Intencje::all()->count()}}</span>/<span class="badge bg-danger text-white" title="Nowe">{{\App\Models\Intencje::where('status','Nowa')->count()}}</span>
             </a>
             <a href="{{route('listyLista')}}"  class="btn btn-primary btn-sm" role="button" aria-pressed="">Listy
-                <span class="badge bg-danger text-white" title="Nowe">{{\App\Models\Listy::where('status','Nowy')->count()}}</span>/<span class="badge bg-info text-dark" title="Zrobić">{{\App\Models\Listy::where('status','Zrobic')->count()}}</span>
+                <span class="badge bg-danger text-white" title="Nowe">{{\App\Models\Listy::where('status','Nowy')->count()}}</span>/<span class="badge bg-info text-dark" title="Zrobić">{{\App\Models\Listy::where('status','Zrobic')->count()}}</span>/<span class="badge bg-warning text-white" title="Zakończone">{{\App\Models\Listy::where('status','Zakonczony')->count()}}</span>
             </a>
 
 
